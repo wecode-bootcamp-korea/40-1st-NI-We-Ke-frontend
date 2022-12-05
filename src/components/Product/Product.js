@@ -10,7 +10,6 @@ const Product = props => {
         <img className="img" src="" alt="productImg" />
       </div>
       <p className="name">{product.name}</p>
-      <p className="optionGender">{product.gender}</p>
       <p className="optionColor">{product.color}</p>
       <p className="price">{product.price}</p>
     </section>
