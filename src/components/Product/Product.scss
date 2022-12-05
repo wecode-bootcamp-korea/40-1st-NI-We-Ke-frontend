@@ -1,0 +1,29 @@
+.product {
+  width: 100%;
+
+  .imgBox {
+    width: 370px;
+    height: 370px;
+    border: 1px solid black;
+
+    .img {
+      width: 100%;
+    }
+  }
+
+  .name {
+    margin-top: 20px;
+    font-size: 22px;
+  }
+
+  .optionGender,
+  .optionColor {
+    margin-top: 10px;
+    color: #ccc;
+  }
+
+  .price {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+}
