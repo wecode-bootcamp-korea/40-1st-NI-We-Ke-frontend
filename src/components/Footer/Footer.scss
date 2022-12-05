@@ -1,0 +1,36 @@
+.footer {
+  width: 100%;
+  padding: 30px 20px;
+  background-color: black;
+  color: white;
+
+  .wrapperBox {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.linkAlign {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+
+  .subTitle {
+    color: white;
+    font-size: 14px;
+  }
+
+  li {
+    line-height: 30px;
+
+    .linkText {
+      color: #555;
+      font-size: 12px;
+    }
+  }
+}
+
+.icons {
+  display: flex;
+}
