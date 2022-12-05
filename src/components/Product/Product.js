@@ -1,16 +1,18 @@
 import React from 'react';
 import '../Product/Product.scss';
 
-const Product = () => {
+const Product = props => {
+  const product = props.product;
+
   return (
     <section className="product">
       <div className="imgBox">
         <img className="img" src="" alt="productImg" />
       </div>
-      <p className="name">Product Name</p>
-      <p className="optionGender">Men</p>
-      <p className="optionColor">Color Option</p>
-      <p className="price">Price</p>
+      <p className="name">{product.name}</p>
+      <p className="optionGender">{product.gender}</p>
+      <p className="optionColor">{product.color}</p>
+      <p className="price">{product.price}</p>
     </section>
   );
 };

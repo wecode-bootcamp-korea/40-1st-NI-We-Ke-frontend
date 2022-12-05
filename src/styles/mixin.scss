@@ -1,0 +1,23 @@
+@mixin productBoxSize {
+  width: 350px;
+  height: 600px;
+}
+
+@mixin productImgSize {
+  width: 350px;
+  height: 350px;
+}
+
+@mixin title {
+  font-size: 20px;
+  font-weight: 700;
+  color: $btnColor;
+}
+
+@mixin productListAlign {
+  width: 1200px;
+  padding: 0px 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}

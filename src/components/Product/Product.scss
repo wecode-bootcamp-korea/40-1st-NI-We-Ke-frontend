@@ -1,9 +1,10 @@
-.product {
-  width: 100%;
+@import '../../styles/mixin.scss';
+@import '../../styles/variables.scss';
 
+.product {
+  @include productBoxSize;
   .imgBox {
-    width: 370px;
-    height: 370px;
+    @include productImgSize;
     border: 1px solid black;
 
     .img {
@@ -12,18 +13,18 @@
   }
 
   .name {
-    margin-top: 20px;
-    font-size: 22px;
+    margin-top: 15px;
+    font-size: 18px;
   }
 
   .optionGender,
   .optionColor {
     margin-top: 10px;
-    color: #ccc;
+    color: $fontGrey;
   }
 
   .price {
     margin-top: 10px;
-    font-size: 18px;
+    font-size: 16px;
   }
 }
