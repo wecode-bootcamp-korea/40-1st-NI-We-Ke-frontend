@@ -1,4 +1,4 @@
-# 40기 A팀 Ni-we-KI
+# 40기 A팀 Ni-we-KE
 ## project : NIKE KOREA
 
 - Product Manager: 원승현
