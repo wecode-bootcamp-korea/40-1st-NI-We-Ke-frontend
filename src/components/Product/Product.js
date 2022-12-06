@@ -2,16 +2,16 @@ import React from 'react';
 import '../Product/Product.scss';
 
 const Product = props => {
-  const product = props.product;
+  const { name, color, price } = props;
 
   return (
     <section className="product">
       <div className="imgBox">
-        <img className="img" src="" alt="productImg" />
+        <img className="img" src="" alt="상품" />
       </div>
-      <p className="name">{product.name}</p>
-      <p className="optionColor">{product.color}</p>
-      <p className="price">{product.price}</p>
+      <p className="name">{name}</p>
+      <p className="option">{color}</p>
+      <p className="price">{price}</p>
     </section>
   );
 };

@@ -3,6 +3,7 @@
 
 .product {
   @include productBoxSize;
+
   .imgBox {
     @include productImgSize;
     border: 1px solid black;
@@ -17,8 +18,7 @@
     font-size: 18px;
   }
 
-  .optionGender,
-  .optionColor {
+  .option {
     margin-top: 10px;
     color: $fontGrey;
   }

@@ -16,7 +16,7 @@ const ProductList = () => {
   return (
     <section className="productList">
       {productList.map(product => {
-        return <Product key={product.id} product={product} />;
+        return <Product key={product.id} {...product} />;
       })}
     </section>
   );
