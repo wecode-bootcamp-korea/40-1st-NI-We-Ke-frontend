@@ -49,6 +49,7 @@ const Footer = () => {
           ))}
         </ul>
       </div>
+      <address></address>
     </footer>
   );
 };
