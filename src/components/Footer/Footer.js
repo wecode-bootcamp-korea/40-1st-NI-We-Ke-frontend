@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="wrapperBox">
         <div className="linkAlign">
-          <ul className="linkBox">
+          <ul className="link">
             {FOOTER_LINK.map(info => (
               <li key={info.id}>
                 <a className="subTitle" href={info.link}>
@@ -49,7 +49,38 @@ const Footer = () => {
           ))}
         </ul>
       </div>
-      <address></address>
+      <address>
+        <div className="addressBox">
+          <div className="location">
+            <a>
+              <img src="" alt="" />
+            </a>
+            <span>대한민국</span>
+            <span className="copyright">
+              2022 NiweKE.inc All Rights Reserved
+            </span>
+          </div>
+          <div className="info">
+            <span>이용약관</span>
+            <span>개인정보처리방침</span>
+          </div>
+        </div>
+      </address>
+      <div className="textBox">
+        <p className="text">
+          (유)나위키코리아 대표 Lorem ipsum dolor | 서울특별시 강남구 테헤란로
+          427, 10층(삼성동) | 통신판매업신고번호 2022-서울강남-00000 | 등록번호
+          000-00-00000 <br /> 사업자 정보 확인 고객센터 전화 문의 000-000-0000
+          FAX 00-0000-0000 | 이메일 service@niweke.co.kr | 호스팅서비스사업자
+          (유)나위키코리아
+        </p>
+        <p className="text">
+          현금 등으로 결제 시 안전 거래를 위해 저희 쇼핑몰에서 가입한
+          페이코리아의 구매 안전 서비스(결제대금예치)를 이용하실 수 있습니다.{' '}
+          <br />
+          온라인디지털콘텐츠산업발전법에 의한 콘텐츠 보호 안내 자세히 보기
+        </p>
+      </div>
     </footer>
   );
 };
@@ -67,7 +98,7 @@ const FOOTER_LINK = [
   {
     id: 4,
     link: 'https://www.nike.com/kr/stories',
-    text: '나이키 저널',
+    text: '나위키 저널',
   },
 ];
 

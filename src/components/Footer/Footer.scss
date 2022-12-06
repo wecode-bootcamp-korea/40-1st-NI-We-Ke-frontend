@@ -25,7 +25,7 @@
     line-height: 30px;
 
     .linkText {
-      color: #555;
+      color: #777;
       font-size: 12px;
     }
   }
@@ -33,4 +33,46 @@
 
 .icons {
   display: flex;
+  border-radius: 50%;
+}
+
+address {
+  margin-top: 30px;
+  font-style: normal;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #777;
+  font-size: 12px;
+
+  .addressBox {
+    display: flex;
+    justify-content: space-between;
+
+    .copyright {
+      margin-left: 20px;
+      color: #777;
+    }
+  }
+
+  .info {
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+
+    span {
+      color: #777;
+    }
+  }
+}
+
+.textBox {
+  display: flex;
+  justify-content: space-between;
+
+  .text {
+    width: 45%;
+    margin-top: 15px;
+    color: #777;
+    font-size: 12px;
+    line-height: 24px;
+  }
 }
