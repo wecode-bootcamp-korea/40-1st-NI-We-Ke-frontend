@@ -17,6 +17,31 @@ const User = ({ text }) => {
   function onClickValidUser(e) {
     navigate('/main');
     e.preventDefault();
+
+    fetch('http://10.58.52.238:3000/auth/signup', {
+      method: 'POST',
+      headers: { 'Content-type': 'application/json;charset=utf-8' },
+      body: JSON.stringify({
+        email: userForm.id,
+        password: userForm.password,
+      }),
+    })
+      .then(response => {
+        if (response.ok === true) {
+          return response.json();
+        }
+        throw new Error('네트워크가 불안정합니다. 다시 시도 해 주세요');
+      })
+      .catch(error => console.log(error))
+      .then(data => {
+        if (data.message === 'login success') {
+          localStorage.setItem('TOKEN', data.token);
+          alert('로그인에 성공했습니다');
+          navigate('/main');
+        } else {
+          alert('아이디와 비밀번호를 확인 해 주세요');
+        }
+      });
   }
 
   return (
