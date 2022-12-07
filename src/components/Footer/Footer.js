@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Footer/Footer.scss';
+import './Footer.scss';
 
 const Footer = () => {
   return (
@@ -8,10 +8,8 @@ const Footer = () => {
         <div className="linkAlign">
           <ul className="link">
             {FOOTER_LINK.map(info => (
-              <li key={info.id}>
-                <a className="subTitle" href={info.link}>
-                  {info.text}
-                </a>
+              <li className="subTitle" key={info.id}>
+                {info.text}
               </li>
             ))}
           </ul>
@@ -19,10 +17,8 @@ const Footer = () => {
           <ul className="help">
             <li className="subTitle">도움말</li>
             {FOOTER_HELP.map(info => (
-              <li key={info.id}>
-                <a className="linkText" href={info.link}>
-                  {info.text}
-                </a>
+              <li className="linkText" key={info.id}>
+                <p className="linkText">{info.text}</p>
               </li>
             ))}
           </ul>
@@ -31,9 +27,7 @@ const Footer = () => {
             <li className="subTitle">ABOUT NIWEKE</li>
             {FOOTER_ABOUT.map(info => (
               <li key={info.id}>
-                <a className="linkText" href={info.link}>
-                  {info.text}
-                </a>
+                <p className="linkText">{info.text}</p>
               </li>
             ))}
           </ul>
@@ -42,9 +36,7 @@ const Footer = () => {
         <ul className="icons">
           {FOOTER_ICONS.map(info => (
             <li key={info.id}>
-              <a href={info.link}>
-                <img src={info.src} alt={info.sns} />
-              </a>
+              <img src={info.src} alt={info.sns} />
             </li>
           ))}
         </ul>
@@ -90,14 +82,12 @@ export default Footer;
 const FOOTER_LINK = [
   {
     id: 1,
-    link: 'https://about.nike.com/en/newsroom',
     text: '새로운 소식',
   },
-  { id: 2, link: 'https://www.nike.com/kr/membership', text: '멤버가입' },
-  { id: 3, link: 'https://www.nike.com/kr/retail', text: '매장찾기' },
+  { id: 2, text: '멤버가입' },
+  { id: 3, text: '매장찾기' },
   {
     id: 4,
-    link: 'https://www.nike.com/kr/stories',
     text: '나위키 저널',
   },
 ];
@@ -105,32 +95,26 @@ const FOOTER_LINK = [
 const FOOTER_HELP = [
   {
     id: 1,
-    link: 'https://www.nike.com/kr/help/a/nike-sign-in-issue-kr',
     text: '로그인 안내',
   },
   {
     id: 2,
-    link: 'https://www.nike.com/kr/orders/details/',
     text: '주문배송조회',
   },
   {
     id: 3,
-    link: 'https://www.nike.com/kr/help/a/returns-policy-kr',
     text: '반품 정책',
   },
   {
     id: 4,
-    link: 'https://www.nike.com/kr/help/a/returns-policy-kr',
     text: '결제 방법',
   },
   {
     id: 5,
-    link: 'https://www.nike.com/kr/help/a/announcements-kr',
     text: '공지사항',
   },
   {
     id: 6,
-    link: 'https://www.nike.com/kr/help/#contact',
     text: '문의하기',
   },
 ];
@@ -138,22 +122,18 @@ const FOOTER_HELP = [
 const FOOTER_ABOUT = [
   {
     id: 1,
-    link: 'https://about.nike.com/en/newsroom',
     text: '소식',
   },
   {
     id: 2,
-    link: 'https://about.nike.com/en/newsroom',
     text: '채용',
   },
   {
     id: 3,
-    link: 'https://investors.nike.com/Home/default.aspx',
     text: '투자자',
   },
   {
     id: 4,
-    link: 'https://www.nike.com/kr/sustainability',
     text: '지속가능성',
   },
 ];
