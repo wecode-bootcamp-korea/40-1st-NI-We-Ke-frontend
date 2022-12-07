@@ -1,0 +1,72 @@
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  background-color: orange;
+
+  .logo {
+    margin-left: 30px;
+  }
+}
+.category {
+  width: 40%;
+  height: 60px;
+  margin-left: 10%;
+  background-color: green;
+
+  .navList {
+    display: flex;
+    height: 100%;
+    justify-content: space-around;
+
+    li {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      font-size: 24px;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.sideOption {
+  display: flex;
+  align-content: space-between;
+  background-color: red;
+  margin-right: 30px;
+
+  img {
+    width: 24px;
+    margin-left: 10px;
+  }
+}
+
+.search {
+  width: 50px;
+  padding-left: 10px;
+  border-radius: 15px;
+}
+
+.dropDown {
+  position: absolute;
+  display: flex;
+  top: 60px;
+  left: 0px;
+  width: 100%;
+  height: 300px;
+  background-color: blue;
+}
+
+.carousel {
+  .carouselImg {
+    width: 50px;
+  }
+
+  .carouselTitle {
+    font-size: 24px;
+  }
+}
