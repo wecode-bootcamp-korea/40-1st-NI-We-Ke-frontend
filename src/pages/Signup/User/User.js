@@ -1,33 +1,53 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './User.scss';
 
 const User = ({ text }) => {
   const { title, link, url, agree } = text;
-  const [userForm, setUserForm] = useState('');
+  const [userForm, setUserForm] = useState({ id: '', password: '' });
+  const navigate = useNavigate();
 
   function onChangeUserInfo(e) {
-    const {name, value}
+    const { name, value } = e.target;
+    setUserForm({ ...userForm, [name]: value });
+  }
+
+  const isValid = userForm.id.includes('@') && userForm.password.length >= 8;
+
+  function onClickValidUser(e) {
+    navigate('/main');
+    e.preventDefault();
   }
 
   return (
     <section className="user">
       <p>{link}</p>
-      <div className="userForm">
-        {title === '가입' && (
-          <input className="firstInput" type="name" 
-          onChange={} placeholder="이름" />
-        )}
-        <input className="firstInput" type="email" 
-        onChange={}
-        placeholder="이메일" />
-        <input type="password"  onChange={}
-        placeholder="비밀번호" />
+      <form className="userForm">
+        <input
+          name="id"
+          className="firstInput"
+          type="email"
+          onChange={onChangeUserInfo}
+          placeholder="이메일"
+        />
+        <input
+          name="password"
+          type="password"
+          onChange={onChangeUserInfo}
+          placeholder="비밀번호"
+        />
         <p className="agree">{agree}</p>
         <Link to={url} className="link">
-          <button>{title}</button>
+          <button
+            className={isValid ? 'loginBtnActive' : 'loginBtn'}
+            type="submit"
+            onClick={onClickValidUser}
+            disabled={!isValid}
+          >
+            {title}
+          </button>
         </Link>
-      </div>
+      </form>
     </section>
   );
 };
