@@ -2,7 +2,8 @@ import React from 'react';
 import Carousel from './Carousel';
 
 const Dropdown = props => {
-  const carouselLoop = props.carousel.map(carousel => {
+  const { carousel } = props;
+  const carouselLoop = carousel.map(carousel => {
     return (
       <Carousel
         key={carousel.id}
@@ -12,8 +13,12 @@ const Dropdown = props => {
       />
     );
   });
-  console.log(props.carousel);
-  return <div className="dropDown">{carouselLoop}</div>;
+
+  return (
+    <div className="dropDown">
+      <section className="carouselSection">{carouselLoop} </section>
+    </div>
+  );
 };
 
 export default Dropdown;

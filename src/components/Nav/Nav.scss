@@ -54,6 +54,7 @@
 .dropDown {
   position: absolute;
   display: flex;
+
   top: 60px;
   left: 0px;
   width: 100%;
@@ -61,6 +62,9 @@
   background-color: blue;
 }
 
+.carouselSection {
+  background-color: green;
+}
 .carousel {
   .carouselImg {
     width: 50px;

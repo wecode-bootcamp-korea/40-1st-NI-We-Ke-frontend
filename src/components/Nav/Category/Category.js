@@ -3,6 +3,7 @@ import Dropdown from '../Dropdown/Dropdown';
 
 const Category = props => {
   const [isVisible, setisVisible] = useState(false);
+  const { id, name, carousel } = props;
   const onMouseEnter = () => {
     setisVisible(true);
   };
@@ -11,8 +12,8 @@ const Category = props => {
   };
   return (
     <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseExit}>
-      <li key={props.id}>{props.name}</li>
-      {isVisible && <Dropdown carousel={props.carousel} />}
+      <li key={id}>{name}</li>
+      {isVisible && <Dropdown carousel={carousel} />}
     </div>
   );
 };
