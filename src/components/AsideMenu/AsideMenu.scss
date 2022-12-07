@@ -1,17 +1,18 @@
 .asideMenu {
-  width: 240px;
+  margin-left: 20px;
 
-  .menuContainer {
-    font-size: 50px;
+  width: 240px;
+  max-height: 300px;
+
+  overflow-y: auto;
+
+  .borderBottom {
+    border-bottom: 3px solid #e5e5e5;
+    transition: height 0.35s;
   }
 
-  .slidebtn {
-    width: 240px;
-    height: 24px;
-
-    // padding: 12px auto;
-
-    background-color: #ffffff;
+  .menuContainer {
+    font-size: 30px;
   }
 
   .detailMenu {
