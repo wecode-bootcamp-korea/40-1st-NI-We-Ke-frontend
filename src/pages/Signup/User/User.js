@@ -7,15 +7,14 @@ const User = ({ text }) => {
   const [userForm, setUserForm] = useState({ id: '', password: '' });
   const navigate = useNavigate();
 
-  function onChangeUserInfo(e) {
+  const onChangeUserInfo = e => {
     const { name, value } = e.target;
     setUserForm({ ...userForm, [name]: value });
-  }
+  };
 
   const isValid = userForm.id.includes('@') && userForm.password.length >= 8;
 
-  function onClickValidUser(e) {
-    navigate('/main');
+  const onClickValidUser = e => {
     e.preventDefault();
 
     fetch('http://10.58.52.238:3000/auth/signup', {
@@ -42,7 +41,7 @@ const User = ({ text }) => {
           alert('아이디와 비밀번호를 확인 해 주세요');
         }
       });
-  }
+  };
 
   return (
     <section className="user">
@@ -64,7 +63,7 @@ const User = ({ text }) => {
         <p className="agree">{agree}</p>
         <Link to={url} className="link">
           <button
-            className={isValid ? 'loginBtnActive' : 'loginBtn'}
+            className={`loginBtn ${isValid ? 'Active' : ''}`}
             type="submit"
             onClick={onClickValidUser}
             disabled={!isValid}

@@ -6,7 +6,7 @@ import './Signup.scss';
 const Signup = () => {
   const location = useLocation();
   const currentURL = location.pathname;
-  const isSelectLogin = currentURL === '/login' && true;
+  const isSelectLogin = currentURL === '/login';
 
   return (
     <section className="signup">

@@ -1,4 +1,5 @@
 @import '../../../styles/variables.scss';
+@import '../../../styles/mixin.scss';
 
 .user {
   width: 550px;
@@ -47,17 +48,10 @@
       border: 0px;
       border-radius: 50px;
       font-size: 16px;
-    }
 
-    .loginBtnActive {
-      width: 100%;
-      padding: 20px 16px 20px 12px;
-      background-color: $btnColor;
-      color: white;
-      opacity: 1;
-      border: 0px;
-      border-radius: 50px;
-      font-size: 16px;
+      &.Active {
+        opacity: 1;
+      }
     }
   }
 }
