@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './User.scss';
 
 const User = ({ text }) => {
@@ -17,9 +17,9 @@ const User = ({ text }) => {
   const onClickValidUser = e => {
     e.preventDefault();
 
-    fetch('http://10.58.52.238:3000/auth/signup', {
+    fetch('http://10.58.52.207:3000/auth/signin', {
       method: 'POST',
-      headers: { 'Content-type': 'application/json;charset=utf-8' },
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         email: userForm.id,
         password: userForm.password,
@@ -31,7 +31,7 @@ const User = ({ text }) => {
         }
         throw new Error('네트워크가 불안정합니다. 다시 시도 해 주세요');
       })
-      .catch(error => console.log(error))
+      .catch(error => console.error(error))
       .then(data => {
         if (data.message === 'login success') {
           localStorage.setItem('TOKEN', data.token);
@@ -61,16 +61,15 @@ const User = ({ text }) => {
           placeholder="비밀번호"
         />
         <p className="agree">{agree}</p>
-        <Link to={url} className="link">
-          <button
-            className={`loginBtn ${isValid ? 'Active' : ''}`}
-            type="submit"
-            onClick={onClickValidUser}
-            disabled={!isValid}
-          >
-            {title}
-          </button>
-        </Link>
+
+        <button
+          className={`loginBtn ${isValid ? 'Active' : ''}`}
+          type="submit"
+          onClick={onClickValidUser}
+          disabled={!isValid}
+        >
+          {title}
+        </button>
       </form>
     </section>
   );
