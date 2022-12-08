@@ -1,10 +1,10 @@
 import React from 'react';
 
 const Carousel = props => {
-  const { id, img, text, name } = props;
+  const { img, text, name } = props;
 
   return (
-    <div className="carousel" key={id}>
+    <div className="carousel">
       <img className="carouselImg" src={img} alt="캐러셀 이미지" />
       <section className="carouselContent">
         <p className="carouselText">{text}</p>

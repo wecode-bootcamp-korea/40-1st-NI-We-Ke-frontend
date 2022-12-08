@@ -16,8 +16,8 @@ const Dropdown = props => {
   const carouselLoop = carousel.map(carousel => {
     return (
       <Carousel
-        key={carousel.id}
-        name={carousel.name}
+        key={carousel.sub_id}
+        name={carousel.sub_name}
         img={carousel.img}
         text={carousel.text}
       />
@@ -29,6 +29,7 @@ const Dropdown = props => {
       movecarousel * 400
     }px )`;
   }, [movecarousel]);
+
   return (
     <div className="dropDown">
       <div className="loopSection">
