@@ -4,7 +4,6 @@ import Nav from './components/Nav/Nav';
 import Main from './pages/Main/Main';
 import ProductList from './pages/ProductList/ProductList';
 import Footer from './components/Footer/Footer';
-import AsideMenu from './components/AsideMenu/AsideMenu';
 
 const Router = () => {
   return (
@@ -13,7 +12,6 @@ const Router = () => {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/productList" element={<ProductList />} />
-        <Route path="/asidemenu" element={<AsideMenu />} />
       </Routes>
       <Footer />
     </BrowserRouter>

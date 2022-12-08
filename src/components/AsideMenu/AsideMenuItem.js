@@ -8,23 +8,22 @@ const AsideMenuItem = props => {
     setIsOpen(!isOpen);
   };
 
-  const detailList = info.Detail.map(data => (
-    <div key={data.id}>{data.Text}</div>
-  ));
-
   const detailClick = () => {
-    console.log(info.Detail[0]);
+    //TODO: 클릭된 내용의 key=value를 쿼리 스트링으로 보내야됨(아직 key,value값 확정 안됨)
   };
+
   return (
     <>
       <div className="borderBottom" onClick={onClick}>
-        {info.Text}
+        {info.text}
       </div>
       <div
-        className={'menu ' + (isOpen ? 'openMenu' : 'closeMenu')}
+        className={`menu ${isOpen ? 'openMenu' : 'closeMenu'}`}
         onClick={detailClick}
       >
-        {detailList}
+        {info.detail.map(data => (
+          <div key={data.id}>{data.text}</div>
+        ))}
       </div>
     </>
   );
