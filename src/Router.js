@@ -4,6 +4,7 @@ import Nav from './components/Nav/Nav';
 import Main from './pages/Main/Main';
 import ProductList from './pages/ProductList/ProductList';
 import Product from './pages/ProductList/Product/Product';
+import Drawpage from './pages/DrawPage/Drawpage';
 import Footer from './components/Footer/Footer';
 
 const Router = () => {
@@ -14,6 +15,7 @@ const Router = () => {
         <Route path="/" element={<Main />} />
         <Route path="/productList" element={<ProductList />} />
         <Route path="/product" element={<Product />} />
+        <Route path="/drawpage" element={<Drawpage />} />
       </Routes>
       <Footer />
     </BrowserRouter>
