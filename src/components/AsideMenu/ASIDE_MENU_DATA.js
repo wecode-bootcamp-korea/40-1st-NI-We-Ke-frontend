@@ -1,4 +1,4 @@
-export const AsideMenuData = [
+export const ASIDE_MENU_DATA = [
   {
     id: 1,
     text: '색상',
