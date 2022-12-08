@@ -8,14 +8,25 @@
 
   .borderBottom {
     border-bottom: 3px solid #e5e5e5;
-    transition: height 0.35s;
   }
 
   .menuContainer {
     font-size: 30px;
+    font-weight: bold;
+    color: #3d3d3d;
   }
 
-  .detailMenu {
+  .menu {
+    transition: all 1s;
     font-size: 20px;
+
+    &.openMenu {
+      max-height: 200px;
+    }
+
+    &.closeMenu {
+      max-height: 0px;
+      overflow: hidden;
+    }
   }
 }

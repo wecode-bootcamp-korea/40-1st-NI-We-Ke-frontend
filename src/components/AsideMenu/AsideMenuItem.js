@@ -12,11 +12,21 @@ const AsideMenuItem = props => {
     <div key={data.id}>{data.Text}</div>
   ));
 
+  const detailClick = () => {
+    console.log(info.Detail[0]);
+  };
   return (
-    <div className="borderBottom" onClick={onClick}>
-      {info.Text}
-      <div className="detailMenu">{isOpen && detailList}</div>
-    </div>
+    <>
+      <div className="borderBottom" onClick={onClick}>
+        {info.Text}
+      </div>
+      <div
+        className={'menu ' + (isOpen ? 'openMenu' : 'closeMenu')}
+        onClick={detailClick}
+      >
+        {detailList}
+      </div>
+    </>
   );
 };
 
