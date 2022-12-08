@@ -54,7 +54,6 @@
 .dropDown {
   position: absolute;
   display: flex;
-
   top: 60px;
   left: 0px;
   width: 100%;
@@ -62,15 +61,49 @@
   background-color: blue;
 }
 
-.carouselSection {
-  background-color: green;
+.loopSection {
+  overflow: hidden;
+  margin: auto;
 }
-.carousel {
-  .carouselImg {
-    width: 50px;
-  }
 
-  .carouselTitle {
-    font-size: 24px;
+.carouselSection {
+  display: flex;
+  position: relative;
+  width: 400px;
+  height: 100%;
+  background-color: green;
+
+  .carousel {
+    display: flex;
+
+    .carouselImg {
+      width: 250px;
+    }
+
+    .carouselContent {
+      margin-top: 10%;
+
+      .carouselTitle {
+        width: 150px;
+        font-size: 24px;
+      }
+      .carouselText {
+        width: 150px;
+      }
+    }
   }
+}
+
+.leftBtn {
+  position: absolute;
+  top: 50%;
+
+  left: 25%;
+}
+
+.rightBtn {
+  position: absolute;
+  top: 50%;
+
+  right: 25%;
 }
