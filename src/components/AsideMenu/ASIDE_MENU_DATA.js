@@ -11,26 +11,6 @@ export const ASIDE_MENU_DATA = [
   },
   {
     id: 2,
-    text: '가격대',
-    detail: [
-      { id: '10,000', text: '0 ~ 50,000원' },
-      { id: '50,000', text: '50,000 ~ 100,000원' },
-      { id: '100,000', text: '100,000원 ~ 150,000원' },
-      { id: '150,000', text: '150,000원 ~ 200,000원' },
-    ],
-  },
-  {
-    id: 3,
-    text: '에어맥스',
-    detail: [
-      { id: '25', text: '250' },
-      { id: '26', text: '260' },
-      { id: '27', text: '270' },
-      { id: '28', text: '280' },
-    ],
-  },
-  {
-    id: 4,
     text: '신발높이',
     detail: [
       { id: '29', text: '로우 탑' },
@@ -39,7 +19,7 @@ export const ASIDE_MENU_DATA = [
     ],
   },
   {
-    id: 5,
+    id: 3,
     text: '너비',
     detail: [
       { id: '9', text: '좁은 편' },
@@ -48,7 +28,7 @@ export const ASIDE_MENU_DATA = [
     ],
   },
   {
-    id: 6,
+    id: 4,
     text: '용도',
     detail: [
       { id: '13', text: '습한 날씨' },
@@ -56,18 +36,28 @@ export const ASIDE_MENU_DATA = [
     ],
   },
   {
-    id: 7,
+    id: 5,
     text: '소재',
     detail: [{ id: '17', text: '지속 가능 컬렉션' }],
   },
   {
-    id: 8,
+    id: 6,
     text: '특징',
     detail: [
       { id: '21', text: '고스트 레이스 시스템' },
       { id: '22', text: '스파이크 없음' },
       { id: '23', text: '내수성' },
       { id: '24', text: '방수' },
+    ],
+  },
+  {
+    id: 7,
+    text: '가격대',
+    detail: [
+      { id: '10,000', text: '0 ~ 50,000원' },
+      { id: '50,000', text: '50,000 ~ 100,000원' },
+      { id: '100,000', text: '100,000원 ~ 150,000원' },
+      { id: '150,000', text: '150,000원 ~ 200,000원' },
     ],
   },
 ];
