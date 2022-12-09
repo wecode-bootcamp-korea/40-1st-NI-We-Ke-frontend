@@ -1,0 +1,119 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixin.scss';
+
+.payment {
+  width: 1200px;
+  margin: 0 auto;
+
+  h3 {
+    padding: 50px 0px;
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .subTitle {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.alignBox {
+  display: flex;
+  justify-content: space-between;
+
+  .delivery {
+    width: 800px;
+    padding: 30px 30px 0px 40px;
+    border-bottom: 1px solid $fontGrey;
+
+    input {
+      width: 350px;
+      @include inputStyle;
+      margin-top: 30px;
+    }
+
+    .inputBox {
+      width: 710px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .fullWidthInput {
+      width: 710px;
+    }
+
+    .alertMsg {
+      padding-top: 8px;
+      font-size: 16px;
+    }
+
+    div {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    button {
+      width: 200px;
+      @include btnStyle;
+      margin: 30px 20px 50px 0px;
+    }
+  }
+
+  .payBox {
+    visibility: hidden;
+  }
+
+  .cart {
+    width: 600px;
+    padding: 30px 30px 0px 40px;
+    display: block;
+    flex-direction: column;
+
+    .textBox {
+      display: flex;
+      padding: 10px 0px;
+      justify-content: space-between;
+
+      span {
+        color: $fontGrey;
+        font-size: 16px;
+        line-height: 30px;
+      }
+
+      .price {
+        color: $btnColor;
+        font-size: 16px;
+        line-height: 30px;
+      }
+
+      .finalPrice {
+        font-size: 18px;
+        font-weight: 700;
+      }
+    }
+
+    .date {
+      margin: 20px 0px;
+      padding: 30px 0px;
+      font-size: 18px;
+      border-top: 1px solid $fontGrey;
+    }
+
+    ul {
+      padding: 10px 0px;
+      display: flex;
+      justify-content: flex-start;
+
+      .product {
+        width: 150px;
+        height: 150px;
+        border: 1px solid $fontGrey;
+      }
+
+      .text {
+        padding-left: 20px;
+        line-height: 30px;
+      }
+    }
+  }
+}
