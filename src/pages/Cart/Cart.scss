@@ -1,0 +1,33 @@
+.cart {
+  justify-content: space-between;
+  display: flex;
+
+  width: 80vw;
+  margin: auto;
+  .cartAndWish {
+    flex-direction: column;
+    display: flex;
+
+    .main {
+      justify-content: space-between;
+      display: flex;
+
+      width: 80vw;
+      margin: auto;
+
+      .cartItemContainer {
+        width: 40vw;
+        margin: 40px;
+
+        .cartTitle {
+          margin-top: 20px;
+        }
+      }
+    }
+
+    .wishList {
+      width: 40vw;
+      margin: 40px;
+    }
+  }
+}

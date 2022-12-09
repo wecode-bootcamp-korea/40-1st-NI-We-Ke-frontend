@@ -1,0 +1,44 @@
+.cartList {
+  width: 50vw;
+
+  h1 {
+    margin: 20px;
+  }
+  .bigList {
+    justify-content: space-between;
+
+    .mainCart {
+      margin-top: 20px;
+      justify-content: be;
+      display: flex;
+
+      font-size: 20px;
+
+      .mainText {
+        flex-direction: column;
+        margin: 10px;
+
+        .product {
+          justify-content: space-between;
+        }
+
+        .cartDetail {
+          margin: 10px;
+        }
+
+        .wishList {
+          width: 50px;
+          margin: 10px;
+        }
+      }
+    }
+    .cartUnder {
+      margin: 20px;
+      font-size: 20px;
+
+      p {
+        margin-top: 10px;
+      }
+    }
+  }
+}

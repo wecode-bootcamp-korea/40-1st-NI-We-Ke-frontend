@@ -1,0 +1,18 @@
+@import '../../styles/variables.scss';
+
+.orderHistory {
+  width: 20vm;
+  margin-top: 40px;
+
+  .text {
+    margin-top: 20px;
+  }
+
+  .payment {
+    margin: 15px;
+  }
+
+  .underBorder {
+    border-bottom: 1px solid $fontGrey;
+  }
+}

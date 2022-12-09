@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import './FreeShipping.scss';
+import '../Cart/FreeShipping.scss';
 
 const FreeShipping = () => {
   return (
