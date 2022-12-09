@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Dropdown from '../Dropdown/Dropdown';
 
 const Category = props => {
-  const { id, name, carousel } = props;
+  const { name, carousel } = props;
   const [isVisible, setisVisible] = useState(false);
 
   const onMouseEnter = () => {
