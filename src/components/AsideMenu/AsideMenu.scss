@@ -1,0 +1,30 @@
+.sideMenu {
+  margin-left: 20px;
+  width: 240px;
+  max-height: 300px;
+  overflow-y: auto;
+
+  .borderBottom {
+    border-bottom: 3px solid #e5e5e5;
+  }
+
+  .menuContainer {
+    font-size: 30px;
+    font-weight: bold;
+    color: #3d3d3d;
+  }
+
+  .menu {
+    transition: all 1s;
+    font-size: 20px;
+
+    &.openMenu {
+      max-height: 200px;
+    }
+
+    &.closeMenu {
+      max-height: 0px;
+      overflow: hidden;
+    }
+  }
+}

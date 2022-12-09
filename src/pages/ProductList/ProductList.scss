@@ -1,0 +1,11 @@
+.productList {
+  display: flex;
+
+  .listAlign {
+    width: 1200px;
+    padding: 0px 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
