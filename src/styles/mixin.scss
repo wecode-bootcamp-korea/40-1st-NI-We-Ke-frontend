@@ -1,11 +1,11 @@
 @mixin productBoxSize {
-  width: 350px;
+  width: 300px;
   height: 600px;
 }
 
-@mixin productImgSize {
-  width: 350px;
-  height: 350px;
+@mixin productImgBoxSize {
+  width: 300px;
+  height: 300px;
 }
 
 @mixin title {

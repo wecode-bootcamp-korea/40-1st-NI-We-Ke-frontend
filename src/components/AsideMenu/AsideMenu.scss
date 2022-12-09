@@ -1,11 +1,17 @@
+@import '../../styles/variables.scss';
+
 .sideMenu {
-  margin-left: 20px;
-  width: 240px;
-  max-height: 300px;
+  width: 300px;
+  max-height: 1500px;
   overflow-y: auto;
 
   .borderBottom {
-    border-bottom: 3px solid #e5e5e5;
+    padding: 15px;
+    border-bottom: 1px solid $fontGrey;
+
+    .menuTitle {
+      font-size: 20px;
+    }
   }
 
   .menuContainer {
@@ -15,8 +21,11 @@
   }
 
   .menu {
+    padding: 5px 10px;
     transition: all 1s;
-    font-size: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
 
     &.openMenu {
       max-height: 200px;

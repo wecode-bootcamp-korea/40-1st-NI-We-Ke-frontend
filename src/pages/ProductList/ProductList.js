@@ -15,14 +15,19 @@ const ProductList = () => {
   }, []);
 
   return (
-    <section className="productList">
-      <AsideMenu />
-      <div className="listAlign">
-        {productList.map(product => {
-          return <Product key={product.id} {...product} />;
-        })}
-      </div>
-    </section>
+    <div className="productList">
+      <section className="subTitle">
+        <h2>Products ( 000 )</h2>
+      </section>
+      <section className="listBox">
+        <AsideMenu />
+        <div className="listAlign">
+          {productList.map(product => {
+            return <Product key={product.id} {...product} />;
+          })}
+        </div>
+      </section>
+    </div>
   );
 };
 

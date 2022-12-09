@@ -1,8 +1,23 @@
 .productList {
+  .subTitle {
+    width: 100%;
+    height: 60px;
+    padding: 0px 50px;
+    line-height: 60px;
+
+    h2 {
+      font-weight: 400;
+    }
+  }
+}
+
+.listBox {
+  padding: 0px 40px;
   display: flex;
+  justify-content: space-between;
 
   .listAlign {
-    width: 1200px;
+    width: 1500px;
     padding: 0px 30px;
     display: flex;
     justify-content: space-between;

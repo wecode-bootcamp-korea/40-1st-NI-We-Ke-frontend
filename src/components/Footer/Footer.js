@@ -35,7 +35,7 @@ const Footer = () => {
 
         <ul className="icons">
           {FOOTER_ICONS.map(info => (
-            <li key={info.id}>
+            <li className="imgBox" key={info.id}>
               <img src={info.src} alt={info.sns} />
             </li>
           ))}
@@ -141,25 +141,25 @@ const FOOTER_ABOUT = [
 const FOOTER_ICONS = [
   {
     id: 1,
-    src: '',
+    src: './images/twitter.png',
     link: 'https://twitter.com/nikecom_kr',
     sns: 'twitter',
   },
   {
     id: 2,
-    src: '',
+    src: './images/facebook.png',
     link: 'https://www.facebook.com/nike',
     sns: 'facebook',
   },
   {
     id: 3,
-    src: '',
+    src: './images/youtube.png',
     link: 'https://www.youtube.com/user/nike',
     sns: 'youtube',
   },
   {
     id: 4,
-    src: '',
+    src: './images/instagram.png',
     link: 'https://www.instagram.com/nike/',
     sns: 'instagram',
   },

@@ -1,6 +1,6 @@
 .footer {
   width: 100%;
-  padding: 30px 20px;
+  padding: 30px 60px;
   background-color: black;
   color: #777;
 
@@ -32,8 +32,19 @@
 }
 
 .icons {
+  width: 250px;
   display: flex;
+  justify-content: space-between;
   border-radius: 50%;
+
+  .imgBox {
+    width: 30px;
+    height: 30px;
+
+    img {
+      width: 100%;
+    }
+  }
 }
 
 address {
