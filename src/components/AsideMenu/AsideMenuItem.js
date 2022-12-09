@@ -15,14 +15,16 @@ const AsideMenuItem = props => {
   return (
     <>
       <div className="borderBottom" onClick={onClick}>
-        {info.text}
+        <h4>{info.text}</h4>
       </div>
       <div
         className={`menu ${isOpen ? 'openMenu' : 'closeMenu'}`}
         onClick={detailClick}
       >
         {info.detail.map(data => (
-          <div key={data.id}>{data.text}</div>
+          <div key={data.id}>
+            <p>{data.text}</p>
+          </div>
         ))}
       </div>
     </>

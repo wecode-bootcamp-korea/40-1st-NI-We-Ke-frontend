@@ -1,11 +1,22 @@
 .productList {
-  display: flex;
+  padding: 0px 50px;
+  justify-content: space-between;
 
-  .listAlign {
-    width: 1200px;
-    padding: 0px 30px;
+  .subTitle {
+    height: 90px;
+    font-size: 28px;
+    line-height: 60px;
+  }
+
+  .listBox {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+
+    .listAlign {
+      width: 1500px;
+      padding: 0px 50px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
   }
 }
