@@ -1,12 +1,36 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Drawpage.scss';
 
 const Drawpage = () => {
-  const [isVisible, setIsVisble] = useState(false);
+  const modal = useRef();
 
-  const onClickHandler = () => {
+  const [isVisible, setIsVisble] = useState(false);
+  const [isVisible2, setIsVisble2] = useState(false);
+  const [isVisible3, setIsVisble3] = useState(false);
+
+  const onClickDraw = () => {
     setIsVisble(true);
   };
+
+  const onClickInfo = () => {
+    setIsVisble2(true);
+  };
+
+  const onClickPrivilege = () => {
+    setIsVisble3(true);
+  };
+
+  useOnClickOutSide(modal, () => {
+    setIsVisble(false);
+  });
+
+  useOnClickOutSide(modal, () => {
+    setIsVisble2(false);
+  });
+
+  useOnClickOutSide(modal, () => {
+    setIsVisble3(false);
+  });
 
   return (
     <div className="drawPage">
@@ -17,14 +41,49 @@ const Drawpage = () => {
           <section className="productExplain">
             1<br />
             1<br />
-            <button onClick={onClickHandler}>응모하기</button>
+            <button onClick={onClickDraw}>응모하기</button>
           </section>
         </section>
       </article>
-      <div className="dummy"></div>
-      {isVisible && <article className="drawModal">모달입니다</article>}
+      <div className="dummy">
+        <button onClick={onClickInfo}>상품정보제공고시</button>
+        <button onClick={onClickPrivilege}>미성년자 권리보호안내</button>
+      </div>
+      {isVisible && (
+        <article className="drawModal" ref={modal}>
+          응모 모달입니다
+        </article>
+      )}
+
+      {isVisible2 && (
+        <article className="drawModal" ref={modal}>
+          정보제공 모달입니다
+        </article>
+      )}
+
+      {isVisible3 && (
+        <article className="drawModal" ref={modal}>
+          미성년자 모달입니다
+        </article>
+      )}
     </div>
   );
+};
+
+const useOnClickOutSide = (modal, handler) => {
+  useEffect(() => {
+    const close = event => {
+      if (!modal.current || modal.current.contains(event.target)) {
+        return;
+      }
+      handler(event);
+    };
+    document.addEventListener('mousedown', close);
+
+    return () => {
+      document.removeEventListener('mousedown', close);
+    };
+  }, [modal, handler]);
 };
 
 export default Drawpage;
