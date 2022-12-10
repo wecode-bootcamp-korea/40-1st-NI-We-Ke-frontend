@@ -22,29 +22,32 @@
   justify-content: space-between;
 
   .delivery {
-    width: 800px;
+    width: 700px;
     padding: 30px 30px 0px 40px;
     border-bottom: 1px solid $fontGrey;
 
-    input {
-      width: 350px;
+    .inputBox {
+      width: 600px;
+      display: flex;
+      justify-content: space-between;
+
+      input {
+        width: 290px;
+        @include inputStyle;
+        margin-top: 30px;
+      }
+    }
+
+    .fullWidthInput {
+      width: 600px;
       @include inputStyle;
       margin-top: 30px;
     }
 
-    .inputBox {
-      width: 710px;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .fullWidthInput {
-      width: 710px;
-    }
-
     .alertMsg {
-      padding-top: 8px;
-      font-size: 16px;
+      padding: 8px 10px;
+      color: $fontGrey;
+      font-size: 14px;
     }
 
     div {
@@ -52,49 +55,103 @@
       justify-content: flex-end;
     }
 
-    button {
+    .continueBtn {
       width: 200px;
       @include btnStyle;
-      margin: 30px 20px 50px 0px;
+      margin: 30px 0px 50px 20px;
+
+      &.Active {
+        opacity: 1;
+      }
     }
   }
 
+  .subTitle {
+    font-size: 20px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid $fontGrey;
+    padding-bottom: 10px;
+  }
+
   .payBox {
-    visibility: hidden;
+    width: 600px;
+    padding: 30px 0px 150px 10px;
+    flex-direction: column;
+    color: $fontGrey;
+
+    &.open {
+      max-height: 430px;
+    }
+
+    &.close {
+      max-height: 0px;
+      overflow: hidden;
+    }
+
+    .radioBox {
+      accent-color: $btnColor;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: 20px;
+
+      input {
+        margin-right: 15px;
+      }
+
+      img {
+        width: 30px;
+        margin-right: 10px;
+      }
+    }
+
+    .agreeCheckBox {
+      accent-color: $btnColor;
+      justify-content: flex-start;
+      margin-top: 20px;
+      color: $fontGrey;
+
+      .agreeBtn {
+        margin-right: 15px;
+      }
+    }
   }
 
   .cart {
     width: 600px;
-    padding: 30px 30px 0px 40px;
+    padding: 30px 30px 0px 50px;
     display: block;
     flex-direction: column;
 
-    .textBox {
-      display: flex;
+    .alignTextBox {
       padding: 10px 0px;
-      justify-content: space-between;
 
-      span {
-        color: $fontGrey;
-        font-size: 16px;
-        line-height: 30px;
-      }
+      .textBox {
+        display: flex;
+        padding: 10px 0px;
+        justify-content: space-between;
 
-      .price {
-        color: $btnColor;
-        font-size: 16px;
-        line-height: 30px;
-      }
+        span {
+          color: $fontGrey;
+          font-size: 16px;
+          line-height: 30px;
+        }
 
-      .finalPrice {
-        font-size: 18px;
-        font-weight: 700;
+        .price {
+          color: $btnColor;
+          font-size: 16px;
+          line-height: 30px;
+        }
+
+        .finalPrice {
+          font-size: 18px;
+          font-weight: 700;
+        }
       }
     }
 
     .date {
       margin: 20px 0px;
-      padding: 30px 0px;
+      padding: 45px 0px;
       font-size: 18px;
       border-top: 1px solid $fontGrey;
     }
@@ -113,6 +170,16 @@
       .text {
         padding-left: 20px;
         line-height: 30px;
+      }
+    }
+
+    .orderBtn {
+      width: 100%;
+      @include btnStyle;
+      margin: 30px 0px;
+
+      &.Active {
+        opacity: 1;
       }
     }
   }
