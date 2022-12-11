@@ -14,6 +14,18 @@ const Payment = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
 
+  const getDeliveryDate = () => {
+    const today = new Date();
+    const week = new Array('일', '월', '화', '수', '목', '금', '토');
+    const todaysMonth = today.getMonth() + 1;
+    const todaysDate = today.getDate() + 3;
+    const todaysDay = today.getDay() + 3;
+    const todaysDayToString = week[todaysDay];
+
+    const deliveryDate = `도착 예정일 : ${todaysMonth}월 ${todaysDate}일 ${todaysDayToString}요일`;
+    return <p className="date">{deliveryDate}</p>;
+  };
+
   const onChangeInputs = e => {
     setInputs({
       ...inputs,
@@ -24,6 +36,14 @@ const Payment = () => {
   const onSubmitInputs = e => {
     e.preventDefault();
     setIsOpen(!isOpen);
+  };
+
+  const onClickCheckedBox = e => {
+    setIsChecked(!isChecked);
+  };
+
+  const onClickOrderBtn = e => {
+    alert('주문을 완료했습니다');
   };
 
   return (
@@ -105,7 +125,11 @@ const Payment = () => {
               실시간 계좌이체
             </div>
             <div className="agreeCheckBox">
-              <input className="agreeBtn" type="checkbox" />
+              <input
+                className="agreeBtn"
+                type="checkbox"
+                onClick={onClickCheckedBox}
+              />
               구매 약관에 동의합니다
             </div>
           </div>
@@ -127,7 +151,7 @@ const Payment = () => {
               <span className="price finalPrice">103,000원</span>
             </div>
           </div>
-          <p className="date">도착 예정일: 12월 00일 (화) </p>
+          {getDeliveryDate()}
           <ul>
             <li className="product">
               <img src="" alt="product_1" />
@@ -140,7 +164,10 @@ const Payment = () => {
               <p>count/price</p>
             </li>
           </ul>
-          <button className={`orderBtn ${isChecked ? 'Active' : ''}`}>
+          <button
+            className={`orderBtn ${isChecked ? 'Active' : ''}`}
+            onClick={onClickOrderBtn}
+          >
             주문 완료
           </button>
         </article>

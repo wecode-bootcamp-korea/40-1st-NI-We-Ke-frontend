@@ -81,11 +81,14 @@
 
     &.open {
       max-height: 430px;
+      overflow: hidden;
+      transition: max-height ease-out 1.2s 0s;
     }
 
     &.close {
       max-height: 0px;
       overflow: hidden;
+      transition: max-height ease-out 1.2s 0s;
     }
 
     .radioBox {
@@ -153,6 +156,7 @@
       margin: 20px 0px;
       padding: 45px 0px;
       font-size: 18px;
+      font-weight: 600;
       border-top: 1px solid $fontGrey;
     }
 
