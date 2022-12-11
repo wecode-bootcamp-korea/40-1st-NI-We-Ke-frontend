@@ -7,10 +7,11 @@ const Main = () => {
   return (
     <div>
       <section className="firstPage">여기는 진입페이지</section>
-      {MAIN_DATA.map(data => {
+      {MAIN_DATA.map((data, i) => {
         return (
           <Content
-            key={data.id}
+            key={i}
+            id={data.id}
             img={data.img}
             title={data.title}
             text={data.text}

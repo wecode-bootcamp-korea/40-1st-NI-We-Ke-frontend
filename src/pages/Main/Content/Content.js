@@ -1,9 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 const Content = props => {
-  const { img, title, text } = props;
+  const { id, img, title, text } = props;
+  const [position, setPosition] = useState(0);
+  const ref = useRef();
+
+  const height = id * 100;
+
+  const onScroll = () => {
+    setPosition(window.scrollY);
+  };
+  console.log(position);
+
+  useEffect(() => {
+    window.addEventListener('scroll', onScroll);
+
+    // return window.removeEventListener('scroll', onScroll);
+  }, [position]);
   return (
-    <div className="content">
+    <div className="content" ref={ref}>
       <section className="imgBox">
         <img className="contentImg" src={img} alt="메인컨텐츠이미지" />
       </section>
