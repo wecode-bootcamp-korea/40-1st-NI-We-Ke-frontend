@@ -1,7 +1,7 @@
 @import '../../styles/variables.scss';
 
 .sideMenu {
-  width: 200px;
+  width: 230px;
   overflow-y: auto;
 
   .borderBottom {
@@ -20,6 +20,8 @@
   }
 
   .menuContainer {
+    height: 100vh;
+    overflow: scroll;
     font-size: 30px;
     font-weight: bold;
     color: $btnColor;
@@ -43,11 +45,14 @@
 
     &.openMenu {
       max-height: 300px;
+      overflow: hidden;
+      transition: max-height ease-out 1.2s 0s;
     }
 
     &.closeMenu {
       max-height: 0px;
       overflow: hidden;
+      transition: max-height ease-out 1.2s 0s;
     }
   }
 }

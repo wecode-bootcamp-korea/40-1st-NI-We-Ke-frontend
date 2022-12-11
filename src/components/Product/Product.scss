@@ -3,7 +3,7 @@
 
 .product {
   @include productBoxSize;
-  padding: 0px 50px;
+  padding: 0px 25px;
 
   .imgBox {
     @include productImgSize;
