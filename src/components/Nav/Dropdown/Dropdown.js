@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Carousel from './Carousel';
+import './Dropdown.scss';
+import './Carousel.scss';
 
 const Dropdown = props => {
   const { carousel } = props;
@@ -13,16 +14,6 @@ const Dropdown = props => {
   const moveRight = () => {
     setMovecarousel(movecarousel - 1);
   };
-  const carouselLoop = carousel.map(carousel => {
-    return (
-      <Carousel
-        key={carousel.sub_id}
-        name={carousel.sub_name}
-        img={carousel.img}
-        text={carousel.text}
-      />
-    );
-  });
 
   useEffect(() => {
     slideSection.current.style.transform = `translate( ${
@@ -34,7 +25,22 @@ const Dropdown = props => {
     <div className="dropDown">
       <div className="loopSection">
         <section className="carouselSection" ref={slideSection}>
-          {carouselLoop}
+          {carousel.map(carousel => {
+            return (
+              <div className="carousel" key={carousel.sub_id}>
+                <img
+                  className="carouselImg"
+                  src={carousel.img}
+                  alt="캐러셀 이미지"
+                />
+                <section className="carouselContent">
+                  <p className="carouselText">{carousel.text}</p>
+                  <p className="carouselTitle">{carousel.sub_name}</p>
+                  <button>자세히보기</button>
+                </section>
+              </div>
+            );
+          })}
         </section>
       </div>
       <button className="leftBtn" onClick={moveLeft}>

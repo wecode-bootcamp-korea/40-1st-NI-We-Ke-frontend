@@ -1,7 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
+import Useoutsideclick from '../../../../utils/hooks/Useoutsideclick';
 import Searchresult from './Searchresult';
-import './Search.scss';
 import SEARCH_DATA from './searchdata';
+import './Search.scss';
 
 const Search = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -17,7 +18,7 @@ const Search = () => {
     setInputValue(e.target.value);
   };
 
-  useOnClickOutSide(ref, () => setIsVisible(false));
+  Useoutsideclick(ref, () => setIsVisible(false));
 
   return (
     <div className="searchSection">
@@ -38,13 +39,6 @@ const Search = () => {
             <article className="content">
               {inputValue.length === 0 ? <p>검색어를 입력하세요</p> : false}
 
-              {/* {inputValue.length > 0 &&
-              !SEARCH_DATA.value.includes(inputValue) ? (
-                <p>검색결과가 없습니다</p>
-              ) : (
-                false
-              )} */}
-
               {SEARCH_DATA.map(searchdata => {
                 return inputValue.length > 0 &&
                   searchdata.value.includes(inputValue) ? (
@@ -64,22 +58,6 @@ const Search = () => {
       )}
     </div>
   );
-};
-
-const useOnClickOutSide = (ref, handler) => {
-  useEffect(() => {
-    const close = event => {
-      if (!ref.current || ref.current.contains(event.target)) {
-        return;
-      }
-      handler(event);
-    };
-    document.addEventListener('mousedown', close);
-
-    return () => {
-      document.removeEventListener('mousedown', close);
-    };
-  }, [ref, handler]);
 };
 
 export default Search;
