@@ -7,17 +7,22 @@ const Dropdown = props => {
   const [movecarousel, setMovecarousel] = useState(0);
 
   const moveLeft = () => {
-    setMovecarousel(movecarousel + 1);
+    if (movecarousel === 0) {
+      setMovecarousel(0);
+    } else setMovecarousel(movecarousel - 1);
   };
 
   const moveRight = () => {
-    setMovecarousel(movecarousel - 1);
+    if (movecarousel > carousel.length - 2) {
+      setMovecarousel(carousel.length - 1);
+    } else setMovecarousel(movecarousel + 1);
   };
 
   useEffect(() => {
-    slideSection.current.style.transform = `translate( ${
+    slideSection.current.style.transform = `translate( -${
       movecarousel * 400
     }px )`;
+    slideSection.current.style.transition = `0.3s`;
   }, [movecarousel]);
 
   return (

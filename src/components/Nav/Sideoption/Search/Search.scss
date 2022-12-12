@@ -26,6 +26,12 @@
       border: none;
       border-radius: 20px;
       background-color: #eee;
+      &:hover {
+        background-color: #ddd;
+      }
+      &:active {
+        background-color: #ccc;
+      }
     }
   }
 
