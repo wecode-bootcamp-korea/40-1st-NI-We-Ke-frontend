@@ -1,0 +1,46 @@
+.wish {
+  width: 400px;
+  height: 400px;
+
+  margin-bottom: 50px;
+
+  .imgBox {
+    height: 300px;
+
+    background-color: black;
+  }
+
+  .nameAndPrice {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .name,
+  .price,
+  .option {
+    font-size: 20px;
+    margin-top: 15px;
+  }
+  .sizeSelect {
+    display: flex;
+    justify-content: space-between;
+
+    .sizeMenu {
+      margin-top: 20px;
+    }
+
+    .sizeBtn {
+      width: 126px;
+      height: 50px;
+
+      border-radius: 20px;
+
+      background-color: #ffffff;
+      color: #111111;
+
+      &.falseBtn {
+        opacity: 1;
+      }
+    }
+  }
+}

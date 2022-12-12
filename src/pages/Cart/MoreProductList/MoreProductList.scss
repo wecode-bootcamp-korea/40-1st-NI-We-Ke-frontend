@@ -1,0 +1,11 @@
+.moreProduct {
+  width: 80vw;
+
+  display: flex;
+  overflow: scroll;
+  overflow-y: hidden;
+
+  .product {
+    margin-left: 30px;
+  }
+}
