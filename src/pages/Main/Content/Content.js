@@ -11,7 +11,7 @@ const Content = props => {
 
   const scrollDown = () => {
     return position + window.innerHeight > window.innerHeight * id + 100 &&
-      position + window.innerHeight < window.innerHeight * id + 150
+      position + window.innerHeight < window.innerHeight * id + 300
       ? //
         window.scrollTo({
           top: window.innerHeight * id + 30,
