@@ -26,7 +26,7 @@ const Payment = () => {
     setIsOpen(!isOpen);
   };
 
-  const onClickCheckedBox = e => {
+  const onClickCheckedBox = () => {
     setIsChecked(!isChecked);
   };
 
@@ -34,19 +34,18 @@ const Payment = () => {
     alert('주문을 완료했습니다');
   };
 
-  // TODO: useEffect 사용에 대한 질문
-  // 1. useState로 date와 setDate가 필요할 것 같음 맞는지?
-  // 2. p태그가 아닌 버튼에 이벤트로 걸어야할 것 같음
   const getDeliveryDate = () => {
-    const today = new Date();
+    const date = new Date();
     const week = new Array('일', '월', '화', '수', '목', '금', '토');
-    const todaysMonth = today.getMonth() + 1;
-    const todaysDate = today.getDate() + 3;
-    const todaysDay = today.getDay() + 3;
+    const todaysMonth = date.getMonth() + 1;
+    const todaysDate = date.getDate() + 3;
+    const todaysDay = date.getDay() + 3;
     const todaysDayToString = week[todaysDay];
     const deliveryDate = `도착 예정일 : ${todaysMonth}월 ${todaysDate}일 ${todaysDayToString}요일`;
     return deliveryDate;
   };
+
+  const deliveryDate = getDeliveryDate();
 
   return (
     <section className="payment">
@@ -153,7 +152,7 @@ const Payment = () => {
               <span className="price finalPrice">103,000원</span>
             </div>
           </div>
-          <p className="date">{getDeliveryDate()}</p>
+          <p className="date">{deliveryDate}</p>
           <ul>
             <li className="product">
               <img src="" alt="product_1" />
