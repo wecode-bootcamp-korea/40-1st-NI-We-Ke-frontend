@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import Useoutsideclick from '../../../../utils/hooks/Useoutsideclick';
+import Useoutsideclick from '../../../../utils/hooks/useOutSideClick';
 import Searchresult from './Searchresult';
 import SEARCH_DATA from './searchdata';
 import './Search.scss';
@@ -19,7 +19,6 @@ const Search = () => {
   };
 
   Useoutsideclick(ref, () => setIsVisible(false));
-
   return (
     <div className="searchSection">
       <input className="search" type="text" onClick={onClickInput} />
@@ -37,7 +36,7 @@ const Search = () => {
           <section className="searchBody">
             <article className="title">검색결과</article>
             <article className="content">
-              {inputValue.length === 0 ? <p>검색어를 입력하세요</p> : false}
+              {inputValue.length === 0 ? <p>검색어를 입력하세요</p> : null}
 
               {SEARCH_DATA.map(searchdata => {
                 return inputValue.length > 0 &&

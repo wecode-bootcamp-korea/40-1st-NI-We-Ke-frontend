@@ -12,9 +12,17 @@ const Category = props => {
     setisVisible(false);
   };
   return (
-    <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseExit}>
+    <div
+      className="categoryText"
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseExit}
+    >
       <li>{name}</li>
-      {isVisible && <Dropdown carousel={carousel} />}
+      {isVisible ? (
+        <Dropdown className="dropDown" carousel={carousel} />
+      ) : (
+        <Dropdown className="dropDownHidden" carousel={carousel} />
+      )}
     </div>
   );
 };

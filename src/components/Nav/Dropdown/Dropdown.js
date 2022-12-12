@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './Dropdown.scss';
 
 const Dropdown = props => {
-  const { carousel } = props;
+  const { className, carousel } = props;
   const slideSection = useRef(null);
   const [movecarousel, setMovecarousel] = useState(0);
 
@@ -21,7 +21,7 @@ const Dropdown = props => {
   }, [movecarousel]);
 
   return (
-    <div className="dropDown">
+    <div className={className}>
       <div className="loopSection">
         <section className="carouselSection" ref={slideSection}>
           {carousel.map(carousel => {
