@@ -26,8 +26,30 @@
       font-size: 16px;
     }
 
-    .firstInput {
-      margin-bottom: 15px;
+    input:focus {
+      outline: none;
+    }
+
+    .inputId,
+    .inputPw {
+      border: 1px solid $btnColor;
+      margin: 5px 0px;
+
+      &.alert {
+        border: 1px solid red;
+      }
+    }
+
+    .alertText {
+      opacity: 0;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 0px 10px;
+
+      &.Active {
+        color: red;
+        opacity: 0.7;
+      }
     }
 
     .agree {
