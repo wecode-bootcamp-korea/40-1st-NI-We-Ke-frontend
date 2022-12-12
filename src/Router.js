@@ -4,7 +4,7 @@ import Signup from '../src/pages/Signup/Signup';
 import Nav from './components/Nav/Nav';
 import Main from './pages/Main/Main';
 import ProductList from './pages/ProductList/ProductList';
-import ProductDetail from './pages/ProductList/ProductDetail/ProductDetail';
+import ProductDetail from './pages/ProductDetail/ProductDetail';
 import Footer from './components/Footer/Footer';
 
 const Router = () => {
