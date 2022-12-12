@@ -1,16 +1,17 @@
-import React, { useState, useRef } from 'react';
-import Useoutsideclick from '../../../../utils/hooks/useOutSideClick';
+import React, { useState, useRef, useEffect } from 'react';
+import useOutSideClick from '../../../../utils/hooks/useOutSideClick';
 import Searchresult from './Searchresult';
-import SEARCH_DATA from './searchdata';
+
 import './Search.scss';
 
 const Search = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [data, setData] = useState([]);
+  const [searchOpen, setSearchOpen] = useState(100);
   const [inputValue, setInputValue] = useState('');
   const ref = useRef();
 
   const onClickInput = () => {
-    setIsVisible(true);
+    setSearchOpen(0);
     setInputValue('');
   };
 
@@ -18,43 +19,51 @@ const Search = () => {
     setInputValue(e.target.value);
   };
 
-  Useoutsideclick(ref, () => setIsVisible(false));
+  useOutSideClick(ref, () => setSearchOpen(100));
+
+  useEffect(() => {
+    fetch('./data/SearchData.json')
+      .then(res => res.json())
+      .then(data => {
+        setData(data);
+      });
+  }, []);
   return (
     <div className="searchSection">
       <input className="search" type="text" onClick={onClickInput} />
-      {isVisible && (
-        <section className="dropdownSection" ref={ref}>
-          <div className="searchHeader">
-            <input
-              className="searchInput"
-              type="text"
-              placeholder="검색"
-              value={inputValue}
-              onChange={onChangeInput}
-            />
-          </div>
-          <section className="searchBody">
-            <article className="title">검색결과</article>
-            <article className="content">
-              {inputValue.length === 0 ? <p>검색어를 입력하세요</p> : null}
 
-              {SEARCH_DATA.map(searchdata => {
-                return inputValue.length > 0 &&
-                  searchdata.value.includes(inputValue) ? (
-                  <Searchresult
-                    key={searchdata.id}
-                    img={searchdata.img}
-                    value={searchdata.value}
-                    price={searchdata.price}
-                  />
-                ) : (
-                  false
-                );
-              })}
-            </article>
-          </section>
+      <section
+        className="dropdownSection"
+        style={{ left: `${searchOpen}vw` }}
+        ref={ref}
+      >
+        <div className="searchHeader">
+          <input
+            className="searchInput"
+            type="text"
+            placeholder="검색"
+            value={inputValue}
+            onChange={onChangeInput}
+          />
+        </div>
+        <section className="searchBody">
+          <article className="title">검색결과</article>
+          <article className="content">
+            {inputValue.length === 0 ? <p>검색어를 입력하세요</p> : null}
+            {data.map(searchdata => {
+              return inputValue.length > 0 &&
+                searchdata.value.includes(inputValue) ? (
+                <Searchresult
+                  key={searchdata.id}
+                  img={searchdata.img}
+                  value={searchdata.value}
+                  price={searchdata.price}
+                />
+              ) : null;
+            })}
+          </article>
         </section>
-      )}
+      </section>
     </div>
   );
 };

@@ -4,7 +4,7 @@
   left: 0px;
   width: 100%;
   height: 300px;
-  background-color: blue;
+  background-color: white;
   transform: translateY(0);
   transition: transform 0.3s;
 }
@@ -25,7 +25,6 @@
   position: relative;
   width: 400px;
   height: 100%;
-  background-color: green;
 }
 
 .carousel {
@@ -36,6 +35,9 @@
   }
 
   .carouselContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     margin-top: 10%;
 
     .carouselTitle {
@@ -45,19 +47,36 @@
     .carouselText {
       width: 150px;
     }
+    .detailBtn {
+      width: 100px;
+      height: 30px;
+      border-radius: 30px;
+      border: none;
+      background-color: #ccc;
+    }
   }
 }
 
 .leftBtn {
   position: absolute;
   top: 50%;
+  left: 30%;
+  border: none;
+  background-color: white;
 
-  left: 25%;
+  img {
+    width: 30px;
+  }
 }
 
 .rightBtn {
   position: absolute;
   top: 50%;
+  right: 30%;
+  border: none;
+  background-color: white;
 
-  right: 25%;
+  img {
+    width: 30px;
+  }
 }

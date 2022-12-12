@@ -10,7 +10,7 @@ const Nav = () => {
 
   return (
     <div className="navBar">
-      <img className="logo" alt="이미지로고" />
+      <h1>NIWEKI</h1>
       <section className="category">
         <ul className="navList">
           {CATEGORY_DATA.map(category => {

@@ -35,7 +35,7 @@ const Dropdown = props => {
                 <section className="carouselContent">
                   <p className="carouselText">{carousel.text}</p>
                   <p className="carouselTitle">{carousel.sub_name}</p>
-                  <button>자세히보기</button>
+                  <button className="detailBtn">자세히보기</button>
                 </section>
               </div>
             );
@@ -43,10 +43,10 @@ const Dropdown = props => {
         </section>
       </div>
       <button className="leftBtn" onClick={moveLeft}>
-        왼쪽
+        <img src="./images/Nav/left-arrow.png" alt="왼쪽버튼" />
       </button>
       <button className="rightBtn" onClick={moveRight}>
-        오른쪽
+        <img src="./images/Nav/right-arrow.png" alt="오른쪽버튼" />
       </button>
     </div>
   );
