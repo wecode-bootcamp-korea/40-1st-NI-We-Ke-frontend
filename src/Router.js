@@ -4,6 +4,7 @@ import Signup from '../src/pages/Signup/Signup';
 import Nav from './components/Nav/Nav';
 import Main from './pages/Main/Main';
 import ProductList from './pages/ProductList/ProductList';
+import ProductDetail from './pages/ProductList/ProductDetail/ProductDetail';
 import Footer from './components/Footer/Footer';
 
 const Router = () => {
@@ -15,6 +16,7 @@ const Router = () => {
         <Route path="/login" element={<Signup />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/productList" element={<ProductList />} />
+        <Route path="/productDetail" element={<ProductDetail />} />
       </Routes>
       <Footer />
     </BrowserRouter>
