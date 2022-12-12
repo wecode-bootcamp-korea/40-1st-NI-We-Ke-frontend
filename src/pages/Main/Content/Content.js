@@ -4,19 +4,19 @@ const Content = props => {
   const { id, img, title, text } = props;
   const [position, setPosition] = useState(0);
   const contentHeight = useRef();
-  let lastScrollTop = position;
+  // const lastScrollTop = position;
   const onScroll = () => {
     setPosition(window.scrollY);
   };
 
   const scrollDown = () => {
-    return position + window.innerHeight === window.innerHeight * id + 100 &&
+    return position + window.innerHeight > window.innerHeight * id + 100 &&
       position + window.innerHeight < window.innerHeight * id + 150
       ? //
         window.scrollTo({
           top: window.innerHeight * id + 30,
           left: 0,
-          behavior: 'smooth',
+          // behavior: 'smooth',
         })
       : false;
   };
@@ -26,7 +26,7 @@ const Content = props => {
       ? window.scrollTo({
           top: window.innerHeight * (id - 1),
           left: 0,
-          behavior: 'smooth',
+          // behavior: 'smooth',
         })
       : false;
   };
@@ -51,13 +51,13 @@ const Content = props => {
       //   } else scrollUp();
       // });
     };
-  }, [position]);
-  // console.log(`현재 스크롤 top 값 : ${position}`);
-  // console.log(`현재 스크롤 bottom 값 : ${position + window.innerHeight}`);
-  // console.log(`${id}번째 content top 값 : ${window.innerHeight * id} `);
-  // console.log(
-  //   `${id}번째 content bottom 값 : ${window.innerHeight * (id + 1)} `
-  // );
+  }, []);
+  console.log(`현재 스크롤 top 값 : ${position}`);
+  console.log(`현재 스크롤 bottom 값 : ${position + window.innerHeight}`);
+  console.log(`${id}번째 content top 값 : ${window.innerHeight * id} `);
+  console.log(
+    `${id}번째 content bottom 값 : ${window.innerHeight * (id + 1)} `
+  );
 
   return (
     <div className="content" ref={contentHeight}>

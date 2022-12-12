@@ -7,17 +7,19 @@ const Main = () => {
   return (
     <div>
       <section className="firstPage">여기는 진입페이지</section>
-      {MAIN_DATA.map((data, i) => {
-        return (
-          <Content
-            key={i}
-            id={data.id}
-            img={data.img}
-            title={data.title}
-            text={data.text}
-          />
-        );
-      })}
+      <section className="scrollSection">
+        {MAIN_DATA.map((data, i) => {
+          return (
+            <Content
+              key={i}
+              id={data.id}
+              img={data.img}
+              title={data.title}
+              text={data.text}
+            />
+          );
+        })}
+      </section>
     </div>
   );
 };
