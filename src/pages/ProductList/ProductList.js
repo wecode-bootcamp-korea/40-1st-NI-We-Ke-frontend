@@ -16,7 +16,7 @@ const ProductList = () => {
 
   return (
     <div className="productList">
-      <h3 className="subTitle">ProductList ( 000 )</h3>
+      <h1 className="subTitle">MEN ( 20 )</h1>
       <section className="listBox">
         <AsideMenu />
         <div className="listAlign">
