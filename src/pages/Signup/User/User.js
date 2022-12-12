@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './User.scss';
 
 const User = ({ text }) => {
-  const { title, link, url, agree } = text;
+  const { title, link, agree } = text;
   const [userForm, setUserForm] = useState({ id: '', password: '' });
   const navigate = useNavigate();
 
@@ -17,7 +17,7 @@ const User = ({ text }) => {
   const onClickValidUser = e => {
     e.preventDefault();
 
-    fetch('http://10.58.52.207:3000/auth/signin', {
+    fetch('http://10.58.52.153:3000/auth/signin', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -33,7 +33,7 @@ const User = ({ text }) => {
       })
       .catch(error => console.error(error))
       .then(data => {
-        if (data.message === 'login success') {
+        if (!!data.accessToken) {
           localStorage.setItem('TOKEN', data.token);
           alert('로그인에 성공했습니다');
           navigate('/main');
