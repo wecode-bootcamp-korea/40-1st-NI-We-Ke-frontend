@@ -1,5 +1,6 @@
 import React from 'react';
 import Category from './Category/Category';
+import Snkrs from './Category/Snkrs';
 import Sideoption from './Sideoption/Sideoption';
 import CATEGORY_DATA from './categoryData';
 import './Nav.scss';
@@ -21,6 +22,7 @@ const Nav = () => {
               />
             );
           })}
+          <Snkrs />
         </ul>
       </section>
       <Sideoption />

@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Dropdown.scss';
-import './Carousel.scss';
 
 const Dropdown = props => {
   const { carousel } = props;
