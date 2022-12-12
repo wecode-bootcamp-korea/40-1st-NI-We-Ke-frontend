@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import Content from './Content/Content';
 import './Main.scss';
 import MAIN_DATA from './maindata';
@@ -6,7 +6,6 @@ import MAIN_DATA from './maindata';
 const Main = () => {
   return (
     <div>
-      <section className="firstPage">여기는 진입페이지</section>
       <section className="scrollSection">
         {MAIN_DATA.map((data, i) => {
           return (
