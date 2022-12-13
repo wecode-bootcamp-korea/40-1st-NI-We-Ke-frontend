@@ -3,33 +3,50 @@ import './ProductDetail.scss';
 
 const ProductDetail = () => {
   const modal = useRef();
-  const [isVisible, setIsVisble] = useState(false);
-  const [isVisible2, setIsVisble2] = useState(false);
-  const [isVisible3, setIsVisble3] = useState(false);
+  const [isVisibleDraw, setIsVisbleDraw] = useState(false);
+  const [isVisibleInfo, setIsVisbleInfo] = useState(false);
+  const [isVisibleMinor, setIsVisbleMinor] = useState(false);
+
   const onClickDraw = () => {
-    setIsVisble(true);
+    setIsVisbleDraw(true);
   };
   const onClickInfo = () => {
-    setIsVisble2(true);
+    setIsVisbleInfo(true);
   };
   const onClickPrivilege = () => {
-    setIsVisble3(true);
+    setIsVisbleMinor(true);
   };
+
   useOnClickOutSide(modal, () => {
-    setIsVisble(false);
+    setIsVisbleDraw(false);
   });
   useOnClickOutSide(modal, () => {
-    setIsVisble2(false);
+    setIsVisbleInfo(false);
   });
   useOnClickOutSide(modal, () => {
-    setIsVisble3(false);
+    setIsVisbleMinor(false);
   });
   return (
-    <div className="drawPage">
+    <div className="productDetail">
       <article className="container">
-        {/* TODO : imgSection img width는 퍼센트 혹은 반응형으로 만들자 */}
-        <section className="imgSection"></section>
+        <section className="imgSection">
+          <ul className="imgBox">
+            <li>
+              <img className="product" src="" alt="product" />
+            </li>
+            <li>
+              <img className="product" src="" alt="product" />
+            </li>
+            <li>
+              <img className="product" src="" alt="product" />
+            </li>
+            <li>
+              <img className="product" src="" alt="product" />
+            </li>
+          </ul>
+        </section>
         <section className="stickySection">
+          <h1>ProductName</h1>
           <section className="productExplain">
             1<br />
             1<br />
@@ -41,17 +58,17 @@ const ProductDetail = () => {
         <button onClick={onClickInfo}>상품정보제공고시</button>
         <button onClick={onClickPrivilege}>미성년자 권리보호안내</button>
       </div>
-      {isVisible && (
+      {isVisibleDraw && (
         <article className="drawModal" ref={modal}>
           응모 모달입니다
         </article>
       )}
-      {isVisible2 && (
+      {isVisibleInfo && (
         <article className="drawModal" ref={modal}>
           정보제공 모달입니다
         </article>
       )}
-      {isVisible3 && (
+      {isVisibleMinor && (
         <article className="drawModal" ref={modal}>
           미성년자 모달입니다
         </article>
