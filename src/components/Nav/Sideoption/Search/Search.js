@@ -19,7 +19,7 @@ const Search = () => {
     setInputValue(e.target.value);
   };
 
-  useOutSideClick(ref, () => setSearchOpen(100));
+  useOutSideClick(ref, () => setSearchOpen('-100%'));
 
   useEffect(() => {
     fetch('./data/SearchData.json')
@@ -28,13 +28,14 @@ const Search = () => {
         setData(data);
       });
   }, []);
+
   return (
     <div className="searchSection">
       <input className="search" type="text" onClick={onClickInput} />
 
       <section
         className="dropdownSection"
-        style={{ left: `${searchOpen}vw` }}
+        style={{ right: `${searchOpen}` }}
         ref={ref}
       >
         <div className="searchHeader">
