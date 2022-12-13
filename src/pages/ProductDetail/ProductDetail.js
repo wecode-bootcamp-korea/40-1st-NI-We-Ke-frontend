@@ -51,14 +51,28 @@ const ProductDetail = () => {
             <img src="" alt="img" />
           </div>
           <p>사이즈 선택</p>
-          <button className="gotoCatBtn" onClick={onClickDraw}>
-            장바구니
-          </button>
-          <button className="gotoCatBtn" onClick={onClickDraw}>
-            위시리스트
-          </button>
           <section className="productExplain">
-            <p>dummy text</p>
+            <button className="gotoCart" onClick={onClickDraw}>
+              장바구니
+            </button>
+            <button className="gotoWishList" onClick={onClickDraw}>
+              위시리스트
+            </button>
+            <p>
+              빛이 그대로 살아 있는 나이키 에어 포스 1 ’07은 OG 농구화로서
+              <br /> 많은 사랑을 받아온 디자인에 새로운 멋을 더했습니다.
+              <br />
+              튼튼하게 스티치 처리된 오버레이와 깔끔한 마감 처리, 과하지 않은
+              <br /> 딱 절제된 화려함으로 빛나는 존재감을 발휘해 보세요.
+            </p>
+            <ul className="review">
+              리뷰(0000)
+              <li>review text</li>
+              <li>review text</li>
+              <li>review text</li>
+              <li>review text</li>
+              <li>review text</li>
+            </ul>
           </section>
         </section>
       </article>
@@ -68,7 +82,7 @@ const ProductDetail = () => {
       </div>
       {isVisibleDraw && (
         <article className="drawModal" ref={modal}>
-          응모 모달입니다
+          <p>장바구니에 상품을 담았습니다</p>
         </article>
       )}
       {isVisibleInfo && (
