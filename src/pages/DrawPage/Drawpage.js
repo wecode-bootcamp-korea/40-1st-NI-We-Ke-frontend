@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Drawpage.scss';
+import INFO_DATA from './infodata';
+import MINER_DATA from './minerdata';
+import TEST_DATA from './testdata';
 
 const Drawpage = () => {
   const modal = useRef();
@@ -35,36 +38,58 @@ const Drawpage = () => {
   return (
     <div className="drawPage">
       <article className="container">
-        {/* TODO : imgSection img width는 퍼센트 혹은 반응형으로 만들자 */}
-        <section className="imgSection"></section>
+        <section className="imgSection">
+          <section className="verSection">
+            <img className="verImg" src={TEST_DATA[0].img1} alt="세로이미지1" />
+            <img className="verImg" src={TEST_DATA[0].img2} alt="세로이미지2" />
+          </section>
+          <section className="rowImg">
+            <img src={TEST_DATA[0].img4} alt="가로이미지1" />
+          </section>
+        </section>
         <section className="stickySection">
           <section className="productExplain">
-            1<br />
-            1<br />
-            <button onClick={onClickDraw}>응모하기</button>
+            <div className="explainText">
+              <p className="productTitle">{TEST_DATA[0].name}</p>
+              <p className="productText">{TEST_DATA[0].text1}</p>
+              <p className="productText">{TEST_DATA[0].text2}</p>
+              <p className="productPrice">{TEST_DATA[0].price}</p>
+            </div>
+            <button className="drawBtn" onClick={onClickDraw}>
+              응모하기
+            </button>
           </section>
         </section>
       </article>
-      <div className="dummy">
-        <button onClick={onClickInfo}>상품정보제공고시</button>
-        <button onClick={onClickPrivilege}>미성년자 권리보호안내</button>
+      <div className="detailSection">
+        <img src={TEST_DATA[0].img5} alt="가로디테일이미지1" />
+        <img src={TEST_DATA[0].img6} alt="가로디테일이미지2" />
+        <img src={TEST_DATA[0].img7} alt="가로디테일이미지3" />
+      </div>
+      <div className="drawFooter">
+        <button className="footerBtn" onClick={onClickInfo}>
+          상품정보제공고시
+        </button>
+        <button className="footerBtn" onClick={onClickPrivilege}>
+          미성년자 권리보호안내
+        </button>
       </div>
       {isVisibleDraw && (
         <article className="drawModal" ref={modal}>
           <div className="modalHeader">DRAW</div>
           <div className="modalBody">
             <form>
-              <div>
+              <div className="nameSection">
                 <span>이름</span>
                 <input type="text" />
               </div>
 
-              <div>
+              <div className="phoneSection">
                 <span>휴대폰</span>
                 <div className="phoneInput">
-                  <input type="text" />
-                  <input type="text" />
-                  <input type="text" />
+                  <input type="text" maxLength={3} />
+                  <input type="text" maxLength={4} />
+                  <input type="text" maxLength={4} />
                 </div>
               </div>
               <fieldset className="sizeSelect">
@@ -94,9 +119,11 @@ const Drawpage = () => {
                   <label htmlFor="280">280</label>
                 </div>
               </fieldset>
-              <button type="button" className="submitBtn">
-                응모하기
-              </button>
+              <div className="buttonSection">
+                <button type="button" className="submitBtn">
+                  응모하기
+                </button>
+              </div>
             </form>
           </div>
         </article>
@@ -104,13 +131,32 @@ const Drawpage = () => {
 
       {isVisibleInfo && (
         <article className="infoModal" ref={modal}>
-          정보제공 모달입니다
+          <div className="infoModalHeader">상품정보 제공고시</div>
+          <div className="infoBody">
+            <ul>
+              {INFO_DATA.map(data => {
+                return (
+                  <li key={data.id}>
+                    <span className="dataTitle">{data.title}</span>
+                    <span className="dataValue">{data.value}</span>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
         </article>
       )}
 
       {isVisibleMiner && (
         <article className="minerModal" ref={modal}>
-          미성년자 모달입니다
+          <div className="minerModalHeader">미성년자 권리보호 안내</div>
+          <div className="minerBody">
+            <ul>
+              {MINER_DATA.map(data => {
+                return <li key={data.id}>{data.value}</li>;
+              })}
+            </ul>
+          </div>
         </article>
       )}
     </div>
