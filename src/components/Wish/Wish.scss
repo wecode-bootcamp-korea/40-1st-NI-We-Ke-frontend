@@ -34,7 +34,7 @@
       background-color: #ffffff;
       color: #111111;
 
-      :disabled {
+      & :disabled {
         opacity: 1;
       }
     }

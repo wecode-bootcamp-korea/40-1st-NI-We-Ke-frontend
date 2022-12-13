@@ -3,7 +3,7 @@ import './MiniWishList.scss';
 import Wish from '../WishListData/WishListData';
 
 const MiniWishList = () => {
-  const [WishList, setWishList] = useState([]);
+  const [wishList, setWishList] = useState([]);
 
   useEffect(() => {
     fetch('./data/Cartdata.json')
@@ -15,7 +15,7 @@ const MiniWishList = () => {
 
   return (
     <section className="miniWishListDetail">
-      {WishList.map(data => {
+      {wishList.map(data => {
         return (
           <Wish
             key={data.id}

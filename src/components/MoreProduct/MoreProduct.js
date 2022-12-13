@@ -5,7 +5,7 @@ const MoreProduct = props => {
   const { name, type, price } = props;
 
   return (
-    <section className="product">
+    <section className="moreProduct">
       <div className="moreImgBox">
         <img className="moreProductImg" src="" alt="상품" />
       </div>
