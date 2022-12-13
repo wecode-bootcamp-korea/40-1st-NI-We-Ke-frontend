@@ -1,7 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 import User from './User/User';
-import './Signup.scss';
 
 const Signup = () => {
   const location = useLocation();
