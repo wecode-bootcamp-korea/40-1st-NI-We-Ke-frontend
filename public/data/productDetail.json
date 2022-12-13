@@ -1,29 +1,50 @@
 [
   {
     "id": 1,
-    "productName": "Air Marc 97",
+    "thumnail_left": "/images/product1.jpg",
+    "thumnail_right": "/images/product1.jpg",
+    "thumnail_bottom": "/images/product2.jpg",
+    "detail_first": "/images/running.jpg",
+    "productName": "Air Marc 50",
     "gender": "Men",
     "price": "100,000원",
-    "size": [200, 210, 220, 230, 240, 250, 260, 270, 280],
-    "productText": "빛이 그대로 살아 있는 나위키 에어마크 50은 OG 농구화로서 많은 사랑을 받아온 디자인에 새로운 멋을 더했습니다. 튼튼하게 스티치 처리된 오버레이 깔끔한 마감 처리, 과하지 않은 딱 절제된 화려함으로 빛나는 존재감을 발휘해 보세요.",
-    "review": ["review 1", "review 2", "review 3", "review 4", "review 5"]
-  },
-  {
-    "id": 2,
-    "productName": "Jordawn 10",
-    "gender": "Women",
-    "price": "100,000원",
-    "size": [200, 210, 220, 230, 240, 250, 260, 270, 280],
-    "productText": "빛이 그대로 살아 있는 나위키 에어마크 50은 OG 농구화로서 많은 사랑을 받아온 디자인에 새로운 멋을 더했습니다. 튼튼하게 스티치 처리된 오버레이 깔끔한 마감 처리, 과하지 않은 딱 절제된 화려함으로 빛나는 존재감을 발휘해 보세요.",
-    "review": ["review 1", "review 2", "review 3", "review 4", "review 5"]
-  },
-  {
-    "id": 3,
-    "productName": "Cortaz 200",
-    "gender": "Men",
-    "price": "100,000원",
-    "size": [200, 210, 220, 230, 240, 250, 260, 270, 280],
-    "productText": "빛이 그대로 살아 있는 나위키 에어마크 50은 OG 농구화로서 많은 사랑을 받아온 디자인에 새로운 멋을 더했습니다. 튼튼하게 스티치 처리된 오버레이 깔끔한 마감 처리, 과하지 않은 딱 절제된 화려함으로 빛나는 존재감을 발휘해 보세요.",
-    "review": ["review 1", "review 2", "review 3", "review 4", "review 5"]
+    "size": [
+      { "id": 1, "value": 200 },
+      { "id": 2, "value": 210 },
+      { "id": 3, "value": 220 },
+      { "id": 4, "value": 230 },
+      { "id": 5, "value": 240 },
+      { "id": 6, "value": 250 },
+      { "id": 7, "value": 260 },
+      { "id": 8, "value": 270 },
+      { "id": 9, "value": 280 }
+    ],
+    "productText": "빛이 그대로 살아 있는 나위키 에어마크 50은 OG 농구화로서 많은 사랑을 받아온 디자인에 새로운 멋을 더해 과하지 않은 딱 절제된 화려함으로 빛나는 존재감을 발휘해 보세요.",
+    "review": [
+      {
+        "id": 1,
+        "user_id": "user1",
+        "product_option_id": "옵션 선택한 거 출력하기",
+        "text": "관련 리뷰 내용 추가하기"
+      },
+      {
+        "id": 2,
+        "user_id": "user2",
+        "product_option_id": "옵션 선택한 거 출력하기",
+        "text": "관련 리뷰 내용 추가하기"
+      },
+      {
+        "id": 3,
+        "user_id": "user3",
+        "product_option_id": "옵션 선택한 거 출력하기",
+        "text": "관련 리뷰 내용 추가하기"
+      },
+      {
+        "id": 4,
+        "user_id": "user4",
+        "product_option_id": "옵션 선택한 거 출력하기",
+        "text": "관련 리뷰 내용 추가하기"
+      }
+    ]
   }
 ]
