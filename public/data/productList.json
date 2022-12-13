@@ -1,9 +1,8 @@
 [
-  //TODO: ProductList Detail: 예상 명세서 설정,
-  //백엔드와 협의 필요
   {
     "id": 1,
     "name": "나위키 씨 포스 7 '01 ",
+    "url": "/images/product2.jpg",
     "price": "176,000원",
     "img": [
       { "img_id": 1, "img_url": "url" },
@@ -34,56 +33,67 @@
   },
   {
     "name": "나위키 씨 포스 7 '01 ",
+    "url": "/images/product2.jpg",
     "color": "2개 색상",
     "price": "176,000원"
   },
   {
     "name": "나위키 씨 포스 7 '01 ",
+    "url": "/images/product2.jpg",
     "color": "2개 색상",
     "price": "176,000원"
   },
   {
     "name": "나위키 씨 포스 7 '01 ",
+    "url": "/images/product2.jpg",
     "color": "2개 색상",
     "price": "176,000원"
   },
   {
     "name": "나위키 씨 포스 7 '01 ",
+    "url": "/images/product2.jpg",
     "color": "2개 색상",
     "price": "176,000원"
   },
   {
     "name": "나위키 씨 포스 7 '01 ",
+    "url": "/images/product2.jpg",
     "color": "2개 색상",
     "price": "176,000원"
   },
   {
     "name": "나위키 씨 포스 7 '01 ",
+    "url": "/images/product2.jpg",
     "color": "2개 색상",
     "price": "176,000원"
   },
   {
     "name": "나위키 씨 포스 7 '01 ",
+    "url": "/images/product2.jpg",
     "color": "2개 색상",
     "price": "176,000원"
   },
   {
     "name": "나위키 씨 포스 7 '01 ",
+    "url": "/images/product2.jpg",
     "color": "2개 색상",
     "price": "176,000원"
   },
   {
     "name": "나위키 씨 포스 7 '01 ",
+    "url": "/images/product2.jpg",
     "color": "2개 색상",
     "price": "176,000원"
   },
   {
     "name": "나위키 씨 포스 7 '01 ",
+    "url": "/images/product2.jpg",
     "color": "2개 색상",
     "price": "176,000원"
   },
   {
     "name": "나위키 씨 포스 7 '01 ",
+    "url": "/images/product2.jpg",
     "color": "2개 색상",
     "price": "176,000원"
   }
