@@ -2,14 +2,13 @@ import React, { useState, useEffect, useRef } from 'react';
 import './Drawpage.scss';
 import INFO_DATA from './infodata';
 import MINER_DATA from './minerdata';
-import TEST_DATA from './testdata';
 
 const Drawpage = () => {
   const modal = useRef();
-
   const [isVisibleDraw, setIsVisbleDraw] = useState(false);
   const [isVisibleInfo, setIsVisbleInfo] = useState(false);
   const [isVisibleMiner, setIsVisbleMiner] = useState(false);
+  const [data, setData] = useState([]);
 
   const onClickDraw = () => {
     setIsVisbleDraw(true);
@@ -35,25 +34,33 @@ const Drawpage = () => {
     setIsVisbleMiner(false);
   });
 
+  useEffect(() => {
+    fetch('/data/drawProductData.json')
+      .then(res => res.json())
+      .then(data => {
+        setData(data);
+      });
+  }, []);
+
   return (
     <div className="drawPage">
       <article className="container">
         <section className="imgSection">
           <section className="verSection">
-            <img className="verImg" src={TEST_DATA[0].img1} alt="세로이미지1" />
-            <img className="verImg" src={TEST_DATA[0].img2} alt="세로이미지2" />
+            <img className="verImg" src={data[0]?.img1} alt="세로이미지1" />
+            <img className="verImg" src={data[0]?.img2} alt="세로이미지2" />
           </section>
           <section className="rowImg">
-            <img src={TEST_DATA[0].img4} alt="가로이미지1" />
+            <img src={data[0]?.img4} alt="가로이미지1" />
           </section>
         </section>
         <section className="stickySection">
           <section className="productExplain">
             <div className="explainText">
-              <p className="productTitle">{TEST_DATA[0].name}</p>
-              <p className="productText">{TEST_DATA[0].text1}</p>
-              <p className="productText">{TEST_DATA[0].text2}</p>
-              <p className="productPrice">{TEST_DATA[0].price}</p>
+              <p className="productTitle">{data[0]?.name}</p>
+              <p className="productText">{data[0]?.text1}</p>
+              <p className="productText">{data[0]?.text2}</p>
+              <p className="productPrice">{data[0]?.price}</p>
             </div>
             <button className="drawBtn" onClick={onClickDraw}>
               응모하기
@@ -62,9 +69,9 @@ const Drawpage = () => {
         </section>
       </article>
       <div className="detailSection">
-        <img src={TEST_DATA[0].img5} alt="가로디테일이미지1" />
-        <img src={TEST_DATA[0].img6} alt="가로디테일이미지2" />
-        <img src={TEST_DATA[0].img7} alt="가로디테일이미지3" />
+        <img src={data[0]?.img5} alt="가로디테일이미지1" />
+        <img src={data[0]?.img6} alt="가로디테일이미지2" />
+        <img src={data[0]?.img7} alt="가로디테일이미지3" />
       </div>
       <div className="drawFooter">
         <button className="footerBtn" onClick={onClickInfo}>
