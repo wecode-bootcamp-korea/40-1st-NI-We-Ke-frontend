@@ -5,6 +5,7 @@
 
   width: 1500px;
   margin: auto;
+
   .cartAndWish {
     flex-direction: column;
     display: flex;
@@ -43,5 +44,11 @@
     .moreProduct {
       margin: 40px;
     }
+  }
+
+  & .mainTitle {
+    font-size: 40px;
+
+    margin: 20px;
   }
 }

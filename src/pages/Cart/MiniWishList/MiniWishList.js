@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './MiniWishList.scss';
 import Wish from '../WishListData/WishListData';
-import '../CartList/CartList.scss';
 
 const MiniWishList = () => {
   const [WishList, setWishList] = useState([]);

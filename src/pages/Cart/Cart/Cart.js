@@ -12,7 +12,7 @@ const Cart = () => {
       <div className="cartAndWish">
         <div className="main">
           <div className="cartItemContainer">
-            <h1 className="cartTitle">장바구니</h1>
+            <p className="cartTitle mainTitle">장바구니</p>
             <CartList />
           </div>
           <div>
@@ -20,14 +20,14 @@ const Cart = () => {
           </div>
         </div>
         <div className="wishList">
-          <h1>위시리스트</h1>
+          <p className="mainTitle">위시리스트</p>
           <MiniWishList />
           <div className="wishListLink">
             <Link to="/WishList">위시리스트 상품 더 보기</Link>
           </div>
         </div>
         <div className="moreList">
-          <h1>추천 상품</h1>
+          <p className="mainTitle">추천 상품</p>
           <MoreProduct />
         </div>
       </div>

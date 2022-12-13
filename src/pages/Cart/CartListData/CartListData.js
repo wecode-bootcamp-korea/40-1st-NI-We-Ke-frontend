@@ -1,7 +1,7 @@
 import React from 'react';
 import './CartListData.scss';
 
-const CartListData = props => {
+const CartProduct = props => {
   const { name, type, color, size, amount, price } = props;
 
   return (
@@ -28,4 +28,4 @@ const CartListData = props => {
   );
 };
 
-export default CartListData;
+export default CartProduct;

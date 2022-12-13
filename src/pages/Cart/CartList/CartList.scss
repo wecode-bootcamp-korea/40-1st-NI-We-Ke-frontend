@@ -1,54 +1,52 @@
 @import '../../../styles/variables.scss';
 
 .CartList {
-  .productData {
-    .cartImg {
-      justify-content: start;
-      display: flex;
+  .cartImg {
+    justify-content: start;
+    display: flex;
 
-      .img {
-        width: 200px;
-        height: 200px;
-        background-color: red;
+    .img {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+
+    .productWish {
+      .productInfo {
+        justify-content: space-between;
+        display: flex;
+        width: 500px;
+
+        .product {
+          width: 170px;
+          height: 100px;
+          background-color: orange;
+        }
+
+        .price {
+          width: 100px;
+          height: 40px;
+          background-color: yellow;
+        }
       }
 
-      .productWish {
-        .productInfo {
-          justify-content: space-between;
-          display: flex;
-          width: 500px;
-
-          .product {
-            width: 170px;
-            height: 100px;
-            background-color: orange;
-          }
-
-          .price {
-            width: 100px;
-            height: 40px;
-            background-color: yellow;
-          }
-        }
-
-        .icons {
-          margin-top: 20px;
-          width: 200px;
-          height: 30px;
-          background-color: green;
-        }
+      .icons {
+        margin-top: 20px;
+        width: 200px;
+        height: 30px;
+        background-color: green;
       }
     }
   }
-  .shippingDate {
-    margin-top: 50px;
-    width: 200px;
-    height: 30px;
-    background-color: blue;
-  }
+}
+.shippingDate {
+  margin-top: 50px;
+  width: 200px;
+  height: 30px;
+  background-color: blue;
+}
 
-  .underLine {
-    margin-top: 30px;
-    border-bottom: 2px solid $fontGrey;
-  }
+.underLine {
+  margin-top: 30px;
+  border-bottom: 2px solid $fontGrey;
 }

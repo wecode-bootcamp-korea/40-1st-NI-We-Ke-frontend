@@ -3,9 +3,9 @@ import './Wish.scss';
 
 const Wish = props => {
   const { id, name, type, price, size } = props;
-  const [optionValue, setOptionValue] = useState('0');
+  const [optionValue, setOptionValue] = useState(0);
   const onChange = event => {
-    setOptionValue(event.target.value);
+    setOptionValue(Number(event.target.value));
   };
 
   const onClick = () => {
@@ -24,10 +24,12 @@ const Wish = props => {
       <p className="option">{type}</p>
       <div className="sizeSelect">
         <select
-          className={`sizeMenu ${optionValue ? 'falseBtn' : 'trueBtn'} `}
+          className={`sizeMenu ${optionValue ? 'deactive' : 'active'} `}
           onChange={onChange}
         >
-          <option value={0}>사이즈를 선택하세요</option>
+          <option defaultValue={0} value={0}>
+            사이즈를 선택하세요
+          </option>
           {size.map(list => {
             return (
               <option value={list.id} key={list.id}>
@@ -38,7 +40,7 @@ const Wish = props => {
         </select>
         <button
           className="sizeBtn"
-          disabled={optionValue !== '0' ? false : true}
+          disabled={!(Number(optionValue) !== 0)}
           onClick={onClick}
         >
           사이즈 선택

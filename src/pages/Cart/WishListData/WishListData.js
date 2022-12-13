@@ -1,5 +1,5 @@
 import React from 'react';
-import '../CartListData/CartListData.scss';
+import '../WishListData/WishListData.scss';
 
 const WishListData = props => {
   const { name, price, type, size } = props;

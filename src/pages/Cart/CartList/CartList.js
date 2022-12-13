@@ -3,7 +3,7 @@ import Cart from '../CartListData/CartListData';
 import './CartList.scss';
 
 const CartList = () => {
-  const [CartList, setCartList] = useState([]);
+  const [cartList, setCartList] = useState([]);
 
   useEffect(() => {
     fetch('./data/Cartdata.json')
@@ -15,7 +15,7 @@ const CartList = () => {
 
   return (
     <section className="cartList">
-      {CartList.map(data => {
+      {cartList.map(data => {
         return <Cart key={data.id} {...data} />;
       })}
     </section>
