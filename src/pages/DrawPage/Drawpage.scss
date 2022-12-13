@@ -34,6 +34,69 @@
 
 .drawModal {
   position: fixed;
+  padding: 15px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 550px;
+  height: 600px;
+  background-color: #ccc;
+  border-radius: 15px;
+
+  .modalHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 10%;
+    font-size: 36px;
+    border-bottom: solid 1px #bbb;
+  }
+  .modalBody {
+    height: 90%;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      height: 100%;
+
+      .sizeSelect {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+
+        input {
+          margin: 5px;
+        }
+      }
+      .submitBtn {
+        width: 200px;
+        height: 40px;
+        border: none;
+        border-radius: 20px;
+        color: #eee;
+        background-color: #333;
+        &:hover {
+          background-color: #111;
+        }
+      }
+    }
+  }
+}
+
+.infoModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background-color: gray;
+}
+
+.minerModal {
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

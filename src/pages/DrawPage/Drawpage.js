@@ -4,32 +4,32 @@ import './Drawpage.scss';
 const Drawpage = () => {
   const modal = useRef();
 
-  const [isVisible, setIsVisble] = useState(false);
-  const [isVisible2, setIsVisble2] = useState(false);
-  const [isVisible3, setIsVisble3] = useState(false);
+  const [isVisibleDraw, setIsVisbleDraw] = useState(false);
+  const [isVisibleInfo, setIsVisbleInfo] = useState(false);
+  const [isVisibleMiner, setIsVisbleMiner] = useState(false);
 
   const onClickDraw = () => {
-    setIsVisble(true);
+    setIsVisbleDraw(true);
   };
 
   const onClickInfo = () => {
-    setIsVisble2(true);
+    setIsVisbleInfo(true);
   };
 
   const onClickPrivilege = () => {
-    setIsVisble3(true);
+    setIsVisbleMiner(true);
   };
 
   useOnClickOutSide(modal, () => {
-    setIsVisble(false);
+    setIsVisbleDraw(false);
   });
 
   useOnClickOutSide(modal, () => {
-    setIsVisble2(false);
+    setIsVisbleInfo(false);
   });
 
   useOnClickOutSide(modal, () => {
-    setIsVisble3(false);
+    setIsVisbleMiner(false);
   });
 
   return (
@@ -49,20 +49,67 @@ const Drawpage = () => {
         <button onClick={onClickInfo}>상품정보제공고시</button>
         <button onClick={onClickPrivilege}>미성년자 권리보호안내</button>
       </div>
-      {isVisible && (
+      {isVisibleDraw && (
         <article className="drawModal" ref={modal}>
-          응모 모달입니다
+          <div className="modalHeader">DRAW</div>
+          <div className="modalBody">
+            <form>
+              <div>
+                <span>이름</span>
+                <input type="text" />
+              </div>
+
+              <div>
+                <span>휴대폰</span>
+                <div className="phoneInput">
+                  <input type="text" />
+                  <input type="text" />
+                  <input type="text" />
+                </div>
+              </div>
+              <fieldset className="sizeSelect">
+                <legend>size</legend>
+                <div>
+                  <input type="radio" id="230" name="size" value="size" />
+                  <label htmlFor="230">230</label>
+                </div>
+                <div>
+                  <input type="radio" id="240" name="size" value="size" />
+                  <label htmlFor="240">240</label>
+                </div>
+                <div>
+                  <input type="radio" id="250" name="size" value="size" />
+                  <label htmlFor="250">250</label>
+                </div>
+                <div>
+                  <input type="radio" id="260" name="size" value="size" />
+                  <label htmlFor="260">260</label>
+                </div>
+                <div>
+                  <input type="radio" id="270" name="size" value="size" />
+                  <label htmlFor="270">270</label>
+                </div>
+                <div>
+                  <input type="radio" id="280" name="size" value="size" />
+                  <label htmlFor="280">280</label>
+                </div>
+              </fieldset>
+              <button type="button" className="submitBtn">
+                응모하기
+              </button>
+            </form>
+          </div>
         </article>
       )}
 
-      {isVisible2 && (
-        <article className="drawModal" ref={modal}>
+      {isVisibleInfo && (
+        <article className="infoModal" ref={modal}>
           정보제공 모달입니다
         </article>
       )}
 
-      {isVisible3 && (
-        <article className="drawModal" ref={modal}>
+      {isVisibleMiner && (
+        <article className="minerModal" ref={modal}>
           미성년자 모달입니다
         </article>
       )}
