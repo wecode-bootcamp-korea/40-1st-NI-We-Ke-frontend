@@ -12,7 +12,7 @@
     justify-content: center;
     width: 100%;
     height: 80%;
-    background-color: cadetblue;
+    background-color: #eee;
 
     .contentImg {
       height: 100%;
@@ -25,7 +25,7 @@
     justify-content: space-around;
     align-items: center;
     height: 20%;
-    background-color: bisque;
+    background-color: #ddd;
 
     .title {
       font-size: 36px;
@@ -33,6 +33,19 @@
     }
     .text {
       font-size: 24px;
+    }
+  }
+
+  .buyBtn {
+    width: 200px;
+    height: 40px;
+    border-radius: 30px;
+    color: #eee;
+    border: none;
+    background-color: #444;
+
+    &:hover {
+      background-color: #333;
     }
   }
 }
