@@ -13,18 +13,18 @@ const Wish = props => {
   };
 
   return (
-    <section className="wish" key={id}>
+    <section className="wish">
       <div className="imgBox">
-        <img className="img" src="" alt="상품" />
+        <img className="produtImg" src="" alt="상품" />
       </div>
-      <div className="nameAndPrice">
+      <div className="rowInfo">
         <p className="name">{name}</p>
         <p className="price">{price}</p>
       </div>
       <p className="option">{type}</p>
       <div className="sizeSelect">
         <select
-          className={`sizeMenu ${optionValue ? 'deactive' : 'active'} `}
+          className={`sizeMenu ${optionValue ? 'deactive' : ''} `}
           onChange={onChange}
         >
           <option defaultValue={0} value={0}>

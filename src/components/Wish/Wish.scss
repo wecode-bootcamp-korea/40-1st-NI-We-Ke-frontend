@@ -8,7 +8,7 @@
     background-color: black;
   }
 
-  .nameAndPrice {
+  .rowInfo {
     display: flex;
     justify-content: space-between;
   }
@@ -19,6 +19,7 @@
     font-size: 20px;
     margin-top: 15px;
   }
+
   .sizeSelect {
     display: flex;
     justify-content: space-between;
@@ -33,7 +34,7 @@
       background-color: #ffffff;
       color: #111111;
 
-      &.deactive {
+      :disabled {
         opacity: 1;
       }
     }

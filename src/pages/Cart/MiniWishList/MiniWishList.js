@@ -14,7 +14,7 @@ const MiniWishList = () => {
   }, []);
 
   return (
-    <section className="wishListDetail">
+    <section className="miniWishListDetail">
       {WishList.map(data => {
         return (
           <Wish

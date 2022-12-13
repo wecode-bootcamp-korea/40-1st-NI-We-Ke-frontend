@@ -3,7 +3,7 @@ import Wish from '../../components/Wish/Wish';
 import './WishList.scss';
 
 const WishList = () => {
-  const [WishList, setWishList] = useState([]);
+  const [wishList, setWishList] = useState([]);
 
   useEffect(() => {
     fetch('/data/WishList.json')
@@ -17,7 +17,7 @@ const WishList = () => {
     <>
       <h1 className="title">위시리스트</h1>
       <div className="wishList">
-        {WishList.map(list => {
+        {wishList.map(list => {
           return <Wish key={list.id} {...list} />;
         })}
       </div>

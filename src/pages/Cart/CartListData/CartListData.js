@@ -6,20 +6,20 @@ const CartProduct = props => {
 
   return (
     <div>
-      <div className="detailInfo">
-        <div className="imgBox">
-          <img className="img" src="" alt="상품" />
+      <div className="cartDetailInfo">
+        <div className="cartImgBox">
+          <img className="cartProductImg" src="" alt="상품" />
         </div>
         <div className="noImg">
-          <div className="priceAndName">
-            <p className="name">{name}</p>
-            <p className="price">{price}</p>
+          <div className="cartRowInfo">
+            <p className="cartName">{name}</p>
+            <p className="cartPrice">{price}</p>
           </div>
-          <p className="type">{type}</p>
-          <p className="color">{color}</p>
-          <div className="form">
-            <p className="size"> 사이즈 {size} </p>
-            <p className="amount">수량 {amount}</p>
+          <p className="cartType">{type}</p>
+          <p className="cartColor">{color}</p>
+          <div className="cartForm">
+            <p className="cartSize"> 사이즈 {size} </p>
+            <p className="cartAmount">수량 {amount}</p>
           </div>
         </div>
       </div>

@@ -6,12 +6,14 @@ const MoreProduct = props => {
 
   return (
     <section className="product">
-      <div className="imgBox">
-        <img className="img" src="" alt="상품" />
+      <div className="moreImgBox">
+        <img className="moreProductImg" src="" alt="상품" />
       </div>
-      <p className="name">{name}</p>
-      <p className="option">{type}</p>
-      <p className="price">{price}</p>
+      <div className="moreInfo">
+        <p className="moreName">{name}</p>
+        <p className="moreOption">{type}</p>
+        <p className="morePrice">{price}</p>
+      </div>
     </section>
   );
 };

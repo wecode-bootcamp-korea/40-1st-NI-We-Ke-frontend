@@ -4,25 +4,25 @@ import './OrderHistory.scss';
 const OrderHistory = () => {
   return (
     <div className="orderHistory">
-      <h1 className="title">주문 내역</h1>
-      <div className="payment">
-        <span className="text">상품 금액 </span>
-        <span className="text">139,000</span>
+      <h1 className="orderTitle">주문 내역</h1>
+      <div className="orderPayment">
+        <span className="ordeText">상품 금액 </span>
+        <span className="ordeText">139,000</span>
       </div>
-      <div className="payment">
-        <span className="text">배송비</span>
-        <span className="text">무료</span>
+      <div className="orderPayment">
+        <span className="ordeText">배송비</span>
+        <span className="ordeText">무료</span>
       </div>
-      <div className="payment">
-        <span className="text">총 할인</span>
-        <span className="text">10,000</span>
-      </div>
-      <div className="underBorder" />
-      <div className="payment">
-        <span className="text">총 결제 금액</span>
-        <span className="text">129,000</span>
+      <div className="orderPayment">
+        <span className="ordeText">총 할인</span>
+        <span className="ordeText">10,000</span>
       </div>
       <div className="underBorder" />
+      <div className="orderPayment">
+        <span className="ordeText">총 결제 금액</span>
+        <span className="ordeText">129,000</span>
+      </div>
+      <div className="orderUnderBorder" />
       <button className="order">주문 결제</button>
     </div>
   );

@@ -6,21 +6,21 @@ const WishListData = props => {
 
   return (
     <div>
-      <div className="detailInfo">
-        <div className="imgBox">
-          <img className="img" src="" alt="상품" />
+      <div className="miniWishDetailInfo">
+        <div className="miniWishImgBox">
+          <img className="miniWishImg" src="" alt="상품" />
         </div>
-        <div className="noImg">
-          <div className="priceAndName">
-            <p className="name">{name}</p>
-            <p className="price">{price}</p>
+        <div className="miniWishNoImg">
+          <div className="miniWishRowInfo">
+            <p className="miniWishName">{name}</p>
+            <p className="miniWishPrice">{price}</p>
           </div>
-          <p className="type">{type}</p>
-          <p className="size"> 사이즈 {size} </p>
-          <button className="cartBtn">장바구니에 추가</button>
+          <p className="miniWishType">{type}</p>
+          <p className="miniWishSize"> 사이즈 {size} </p>
+          <button className="miniWishBtn">장바구니에 추가</button>
         </div>
       </div>
-      <div className="underLine" />
+      <div className="miniWishUnderLine" />
     </div>
   );
 };

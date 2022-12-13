@@ -1,15 +1,15 @@
-.detailInfo {
+.cartDetailInfo {
   margin: 20px;
 
   display: flex;
 
-  .imgBox {
+  .cartImgBox {
     width: 200px;
     height: 200px;
 
     background-color: black;
   }
-  .priceAndName {
+  .cartRowInfo {
     justify-content: space-between;
     display: flex;
     width: 500px;
@@ -17,23 +17,24 @@
     font-size: 30px;
     color: #111;
   }
-  .type,
-  .color,
-  .form {
+  .cartType,
+  .cartColor,
+  .cartForm {
     margin-top: 10px;
     font-size: 20px;
     color: #757575;
   }
 
-  .form {
+  .cartForm {
     display: flex;
 
-    .size,
-    .amount {
+    .cartSize,
+    .cartAmount {
       margin-right: 15px;
     }
   }
-  .underLine {
-    border-bottom: 10px solid #757575;
-  }
+}
+.underLine {
+  margin-top: 30px;
+  border-bottom: 2px solid #757575;
 }

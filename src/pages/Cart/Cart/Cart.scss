@@ -1,54 +1,44 @@
 @import '../../../styles/variables.scss';
+
 .cart {
   justify-content: space-between;
   display: flex;
-
   width: 1500px;
   margin: auto;
 
-  .cartAndWish {
+  .mainContainer {
     flex-direction: column;
     display: flex;
 
     .main {
       justify-content: space-between;
       display: flex;
-
       width: 80vw;
       margin: auto;
 
       .cartItemContainer {
         margin: 40px;
-
-        .cartTitle {
-          margin-top: 20px;
-        }
       }
     }
 
-    .wishList {
+    .cartWishList {
       width: 1200px;
-      margin: 40px;
+      margin-left: 150px;
 
-      .underLine {
-        margin-top: 30px;
-        border-bottom: 2px solid $fontGrey;
-      }
-
-      .wishListLink {
+      .cartWishListLink {
         margin-top: 30px;
         text-decoration: underline;
+        margin-left: 20px;
       }
     }
 
-    .moreProduct {
-      margin: 40px;
+    .cartTitle {
+      font-size: 40px;
+      margin: 20px;
     }
   }
-
-  & .mainTitle {
-    font-size: 40px;
-
-    margin: 20px;
+  .miniWishUnderLine {
+    margin-top: 30px;
+    border-bottom: 2px solid #757575;
   }
 }
