@@ -9,7 +9,7 @@ const Wish = props => {
   };
 
   const onClick = () => {
-    alert('버튼 활성화 됨');
+    alert('장바구니에 추가되었습니다.');
   };
 
   return (
@@ -43,7 +43,7 @@ const Wish = props => {
           disabled={!(Number(optionValue) !== 0)}
           onClick={onClick}
         >
-          사이즈 선택
+          장바구니에 추가
         </button>
       </div>
     </section>

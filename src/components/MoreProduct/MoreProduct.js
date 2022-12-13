@@ -1,5 +1,5 @@
 import React from 'react';
-import '../Product/Product.scss';
+import './MoreProduct.scss';
 
 const MoreProduct = props => {
   const { name, type, price } = props;
