@@ -1,7 +1,7 @@
 @import '../../styles/variables.scss';
 
 .sideMenu {
-  width: 230px;
+  width: 240px;
   overflow-y: auto;
 
   .borderBottom {
@@ -20,7 +20,7 @@
   }
 
   .menuContainer {
-    height: 100vh;
+    height: 80vh;
     overflow: scroll;
     font-size: 30px;
     font-weight: bold;
