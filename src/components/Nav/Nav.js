@@ -10,7 +10,7 @@ const Nav = () => {
 
   return (
     <div className="navBar">
-      <h1>NIWEKI</h1>
+      <h1>NIweKE</h1>
       <section className="category">
         <ul className="navList">
           {CATEGORY_DATA.map(category => {

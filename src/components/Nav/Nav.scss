@@ -1,10 +1,20 @@
+@import '../../styles/mixin.scss';
+@import '../../styles/variables.scss';
+
 .navBar {
   position: relative;
+  z-index: 999;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0px 70px;
   height: 60px;
   background-color: white;
+
+  h1 {
+    font-size: 22px;
+    font-style: italic;
+  }
 
   .logo {
     margin-left: 30px;
@@ -26,10 +36,12 @@
       display: flex;
       align-items: center;
       height: 100%;
-      font-size: 24px;
+      font-size: 16px;
+      border-bottom: 3px solid transparent;
 
       &:hover {
         cursor: pointer;
+        border-bottom: 3px solid $btnColor;
       }
     }
   }
@@ -48,7 +60,19 @@
 }
 
 .search {
-  width: 50px;
-  padding-left: 10px;
+  width: 100px;
+  padding: 4px 8px;
+  border: none;
+  background-color: $inputBg;
   border-radius: 15px;
+
+  .search:focus {
+    outline: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: #eee;
+    border: 1px solid $btnColor;
+  }
 }

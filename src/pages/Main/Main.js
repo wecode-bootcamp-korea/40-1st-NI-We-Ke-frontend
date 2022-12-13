@@ -6,7 +6,9 @@ import MAIN_DATA from './maindata';
 const Main = () => {
   return (
     <div>
-      <section className="firstPage">여기는 진입페이지</section>
+      <section className="firstPage">
+        <img src="/images/main_thumnail.jpg" alt="mainThumnail" />
+      </section>
       {MAIN_DATA.map(data => {
         return (
           <Content
