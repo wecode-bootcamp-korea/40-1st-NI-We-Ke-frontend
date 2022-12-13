@@ -40,9 +40,6 @@ const ProductDetail = () => {
             <li>
               <img className="product" src="" alt="product" />
             </li>
-            <li>
-              <img className="product" src="" alt="product" />
-            </li>
           </ul>
         </section>
         <section className="stickySection">
@@ -50,7 +47,9 @@ const ProductDetail = () => {
           <section className="productExplain">
             1<br />
             1<br />
-            <button onClick={onClickDraw}>응모하기</button>
+            <button className="gotoCatBtn" onClick={onClickDraw}>
+              장바구니
+            </button>
           </section>
         </section>
       </article>
