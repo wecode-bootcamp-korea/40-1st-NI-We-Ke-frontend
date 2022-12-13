@@ -44,12 +44,21 @@ const ProductDetail = () => {
         </section>
         <section className="stickySection">
           <h1>ProductName</h1>
+          <h2>MEN</h2>
+          <p>100,000원</p>
+          <div className="stickyImg">
+            <img src="" alt="img" />
+            <img src="" alt="img" />
+          </div>
+          <p>사이즈 선택</p>
+          <button className="gotoCatBtn" onClick={onClickDraw}>
+            장바구니
+          </button>
+          <button className="gotoCatBtn" onClick={onClickDraw}>
+            위시리스트
+          </button>
           <section className="productExplain">
-            1<br />
-            1<br />
-            <button className="gotoCatBtn" onClick={onClickDraw}>
-              장바구니
-            </button>
+            <p>dummy text</p>
           </section>
         </section>
       </article>
