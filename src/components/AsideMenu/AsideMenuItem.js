@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 const AsideMenuItem = props => {
   const { info } = props;
@@ -8,8 +9,13 @@ const AsideMenuItem = props => {
     setIsOpen(!isOpen);
   };
 
-  const detailClick = () => {
-    //TODO: 클릭된 내용의 key=value를 쿼리 스트링으로 보내야됨(아직 key,value값 확정 안됨)
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const detailClick = event => {
+    const { id, value } = event.target.dataset;
+    // searchParams.getAll(value).includes(id); // adsf
+    searchParams.append(value, id);
+    setSearchParams(searchParams);
   };
 
   return (
@@ -23,7 +29,9 @@ const AsideMenuItem = props => {
       >
         {info.detail.map(data => (
           <div key={data.id}>
-            <p>{data.text}</p>
+            <p data-id={data.text} data-value={data.value}>
+              {data.text}
+            </p>
           </div>
         ))}
       </div>
