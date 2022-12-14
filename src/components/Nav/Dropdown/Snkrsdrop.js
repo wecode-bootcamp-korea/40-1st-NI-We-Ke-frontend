@@ -23,6 +23,7 @@ const Snkrsdrop = () => {
               name={item.name}
               img={item.img}
               text={item.text}
+              desc={item.desc}
             />
           );
         })}
