@@ -1,38 +1,27 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Productinfosection from './Productinfosection';
 import './Drawpage.scss';
 import INFO_DATA from './infodata';
 import MINER_DATA from './minerdata';
+import InfoModal from './components/InfoModal';
+import useOutSideClick from '../../utils/hooks/useOutSideClick';
 
 const Drawpage = () => {
   const modal = useRef();
-  const [isVisibleDraw, setIsVisbleDraw] = useState(false);
-  const [isVisibleInfo, setIsVisbleInfo] = useState(false);
-  const [isVisibleMiner, setIsVisbleMiner] = useState(false);
   const [data, setData] = useState([]);
+  const [isOpenModal, setIsOpenModal] = useState(false);
+  const [selectContent, setSelectContent] = useState(0);
+  const [isVisibleDraw, setIsVisbleDraw] = useState(false);
+
+  const switchModal = () => {
+    setIsOpenModal(prev => !prev);
+  };
 
   const onClickDraw = () => {
     setIsVisbleDraw(true);
   };
 
-  const onClickInfo = () => {
-    setIsVisbleInfo(true);
-  };
-
-  const onClickPrivilege = () => {
-    setIsVisbleMiner(true);
-  };
-
-  useOnClickOutSide(modal, () => {
+  useOutSideClick(modal, () => {
     setIsVisbleDraw(false);
-  });
-
-  useOnClickOutSide(modal, () => {
-    setIsVisbleInfo(false);
-  });
-
-  useOnClickOutSide(modal, () => {
-    setIsVisbleMiner(false);
   });
 
   useEffect(() => {
@@ -42,6 +31,17 @@ const Drawpage = () => {
         setData(data);
       });
   }, []);
+
+  const obj = {
+    1: {
+      title: '상품정보 제공고시',
+      data: INFO_DATA,
+    },
+    2: {
+      title: '미성년자 권리보호 안내',
+      data: MINER_DATA,
+    },
+  };
 
   return (
     <div className="drawPage">
@@ -75,13 +75,33 @@ const Drawpage = () => {
         <img src={data[0]?.img7} alt="가로디테일이미지3" />
       </div>
       <div className="drawFooter">
-        <button className="footerBtn" onClick={onClickInfo}>
+        <button
+          className="footerBtn"
+          onClick={() => {
+            switchModal();
+            setSelectContent(1);
+          }}
+        >
           상품정보제공고시
         </button>
-        <button className="footerBtn" onClick={onClickPrivilege}>
+        <button
+          className="footerBtn"
+          onClick={() => {
+            switchModal();
+            setSelectContent(2);
+          }}
+        >
           미성년자 권리보호안내
         </button>
+        {isOpenModal && (
+          <InfoModal
+            content={obj[selectContent].data}
+            title={obj[selectContent].title}
+            switchModal={switchModal}
+          />
+        )}
       </div>
+
       {isVisibleDraw && (
         <article className="drawModal" ref={modal}>
           <div className="modalHeader">DRAW</div>
@@ -136,55 +156,8 @@ const Drawpage = () => {
           </div>
         </article>
       )}
-
-      {isVisibleInfo && (
-        <article className="infoModal" ref={modal}>
-          <div className="infoModalHeader">상품정보 제공고시</div>
-          <div className="infoBody">
-            <ul>
-              {INFO_DATA.map(data => {
-                return (
-                  <li key={data.id}>
-                    <span className="dataTitle">{data.title}</span>
-                    <span className="dataValue">{data.value}</span>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        </article>
-      )}
-
-      {isVisibleMiner && (
-        <article className="minerModal" ref={modal}>
-          <div className="minerModalHeader">미성년자 권리보호 안내</div>
-          <div className="minerBody">
-            <ul>
-              {MINER_DATA.map(data => {
-                return <li key={data.id}>{data.value}</li>;
-              })}
-            </ul>
-          </div>
-        </article>
-      )}
     </div>
   );
-};
-
-const useOnClickOutSide = (modal, handler) => {
-  useEffect(() => {
-    const close = event => {
-      if (!modal.current || modal.current.contains(event.target)) {
-        return;
-      }
-      handler(event);
-    };
-    document.addEventListener('mousedown', close);
-
-    return () => {
-      document.removeEventListener('mousedown', close);
-    };
-  }, [modal, handler]);
 };
 
 export default Drawpage;
