@@ -1,61 +1,110 @@
 [
   {
+    "id": 1,
     "name": "나위키 씨 포스 7 '01 ",
+    "url": "/images/product2.jpg",
+    "price": "176,000원",
+    "img": [
+      { "img_id": 1, "img_url": "url" },
+      { "img_id": 2, "img_url": "url" },
+      { "img_id": 3, "img_url": "url" },
+      { "img_id": 4, "img_url": "url" }
+    ],
+    "detailImg": [
+      { "detailImg_id": 1, "detailImg_url": "url" },
+      { "detailImg_id": 2, "detailImg_url": "url" },
+      { "detailImg_id": 3, "detailImg_url": "url" }
+    ],
+    "color": "2개 색상",
+    "size": [
+      { "size_id": 1, "size_value": 230 },
+      { "size_id": 2, "size_value": 240 },
+      { "size_id": 3, "size_value": 250 },
+      { "size_id": 4, "size_value": 260 },
+      { "size_id": 5, "size_value": 270 }
+    ],
+    "review": [
+      { "review_id": 1, "review_value": "text" },
+      { "review_id": 2, "review_value": "text" },
+      { "review_id": 3, "review_value": "text" },
+      { "review_id": 4, "review_value": "text" }
+    ],
+    "discount": 0
+  },
+  {
+    "id": 2,
+    "name": "나위키 씨 포스 7 '01 ",
+    "url": "/images/product2.jpg",
     "color": "2개 색상",
     "price": "176,000원"
   },
   {
+    "id": 3,
     "name": "나위키 씨 포스 7 '01 ",
+    "url": "/images/product2.jpg",
     "color": "2개 색상",
     "price": "176,000원"
   },
   {
+    "id": 4,
     "name": "나위키 씨 포스 7 '01 ",
+    "url": "/images/product2.jpg",
     "color": "2개 색상",
     "price": "176,000원"
   },
   {
+    "id": 5,
     "name": "나위키 씨 포스 7 '01 ",
+    "url": "/images/product2.jpg",
     "color": "2개 색상",
     "price": "176,000원"
   },
   {
+    "id": 6,
     "name": "나위키 씨 포스 7 '01 ",
+    "url": "/images/product2.jpg",
     "color": "2개 색상",
     "price": "176,000원"
   },
   {
+    "id": 7,
     "name": "나위키 씨 포스 7 '01 ",
+    "url": "/images/product2.jpg",
     "color": "2개 색상",
     "price": "176,000원"
   },
   {
+    "id": 8,
     "name": "나위키 씨 포스 7 '01 ",
+    "url": "/images/product2.jpg",
     "color": "2개 색상",
     "price": "176,000원"
   },
   {
+    "id": 9,
     "name": "나위키 씨 포스 7 '01 ",
+    "url": "/images/product2.jpg",
     "color": "2개 색상",
     "price": "176,000원"
   },
   {
+    "id": 10,
     "name": "나위키 씨 포스 7 '01 ",
+    "url": "/images/product2.jpg",
     "color": "2개 색상",
     "price": "176,000원"
   },
   {
+    "id": 11,
     "name": "나위키 씨 포스 7 '01 ",
+    "url": "/images/product2.jpg",
     "color": "2개 색상",
     "price": "176,000원"
   },
   {
+    "id": 12,
     "name": "나위키 씨 포스 7 '01 ",
-    "color": "2개 색상",
-    "price": "176,000원"
-  },
-  {
-    "name": "나위키 씨 포스 7 '01 ",
+    "url": "/images/product2.jpg",
     "color": "2개 색상",
     "price": "176,000원"
   }

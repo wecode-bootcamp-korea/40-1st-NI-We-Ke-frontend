@@ -1,18 +1,17 @@
 .footer {
   width: 100%;
-  padding: 30px 20px;
+  padding: 30px 100px;
   background-color: black;
   color: #777;
 
   .wrapperBox {
-    width: 100%;
     display: flex;
     justify-content: space-between;
   }
 }
 
 .linkAlign {
-  width: 500px;
+  width: 400px;
   display: flex;
   justify-content: space-between;
 
@@ -32,8 +31,24 @@
 }
 
 .icons {
+  width: 200px;
   display: flex;
+  justify-content: space-between;
   border-radius: 50%;
+
+  li {
+    width: 30px;
+    height: 30px;
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
 }
 
 address {
@@ -46,21 +61,21 @@ address {
   .addressBox {
     display: flex;
     justify-content: space-between;
-
-    .copyright {
-      margin-left: 20px;
-      color: #777;
-    }
   }
 
-  .info {
-    width: 150px;
-    display: flex;
-    justify-content: space-between;
+  .copyright {
+    margin-left: 20px;
+    color: #777;
+  }
+}
 
-    span {
-      color: #777;
-    }
+.info {
+  width: 150px;
+  display: flex;
+  justify-content: space-between;
+
+  span {
+    color: #777;
   }
 }
 
