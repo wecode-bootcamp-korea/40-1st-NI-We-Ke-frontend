@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import Productinfosection from './Productinfosection';
 import './Drawpage.scss';
 import INFO_DATA from './infodata';
 import MINER_DATA from './minerdata';
