@@ -3,9 +3,9 @@ export const ASIDE_MENU_DATA = [
     id: 1,
     text: '색상',
     detail: [
-      { color: 'red', text: '빨강' },
-      { color: 'blue', text: '블루' },
-      { color: 'orange', text: '오렌지' },
+      { value: 'color', text: 'Red' },
+      { value: 'color', text: 'blue' },
+      { value: 'color', text: 'orange' },
     ],
   },
   {
@@ -21,8 +21,8 @@ export const ASIDE_MENU_DATA = [
     id: 3,
     text: '용도',
     detail: [
-      { id: '12', text: '운동 / 스포츠' },
-      { id: '13', text: '라이프 스타일' },
+      { id: 'sports', value: 'purpose', text: '운동 / 스포츠' },
+      { id: 'lifestyle', value: 'purpose', text: '라이프 스타일' },
     ],
   },
   {
