@@ -1,0 +1,40 @@
+.cartDetailInfo {
+  margin: 20px;
+
+  display: flex;
+
+  .cartImgBox {
+    width: 200px;
+    height: 200px;
+
+    background-color: black;
+  }
+  .cartRowInfo {
+    justify-content: space-between;
+    display: flex;
+    width: 500px;
+
+    font-size: 30px;
+    color: #111;
+  }
+  .cartType,
+  .cartColor,
+  .cartForm {
+    margin-top: 10px;
+    font-size: 20px;
+    color: #757575;
+  }
+
+  .cartForm {
+    display: flex;
+
+    .cartSize,
+    .cartAmount {
+      margin-right: 15px;
+    }
+  }
+}
+.underLine {
+  margin-top: 30px;
+  border-bottom: 2px solid #757575;
+}
