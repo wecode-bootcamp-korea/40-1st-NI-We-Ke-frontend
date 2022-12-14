@@ -33,8 +33,31 @@
       margin-right: 15px;
     }
   }
+
+  .likeBtn {
+    width: 25px;
+    height: 25px;
+    margin-top: 5px;
+    margin-left: 5px;
+    border: none;
+    background-image: url('../../../assets/images/likeClick.png');
+    background-color: transparent;
+    background-size: cover;
+  }
 }
+
+.deleteBtn {
+  width: 25px;
+  height: 25px;
+  border: none;
+  margin-left: 5px;
+  margin-top: 5px;
+  background-image: url('../../../assets/images/delete.png');
+  background-color: transparent;
+  background-size: cover;
+}
+
 .underLine {
   margin-top: 30px;
-  border-bottom: 2px solid #757575;
+  border-bottom: 2px solid #bbb;
 }

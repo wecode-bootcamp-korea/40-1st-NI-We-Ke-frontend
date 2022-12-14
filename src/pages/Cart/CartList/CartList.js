@@ -1,16 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Cart from '../CartListData/CartListData';
 
-const CartList = () => {
-  const [cartList, setCartList] = useState([]);
-
-  useEffect(() => {
-    fetch('./data/Cartdata.json')
-      .then(res => res.json())
-      .then(data => {
-        setCartList(data);
-      });
-  }, []);
+const CartList = props => {
+  const { cartList } = props;
 
   return (
     <section className="cartList">
