@@ -1,0 +1,79 @@
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixin.scss';
+
+.user {
+  width: 550px;
+  margin: 0 auto;
+  padding: 100px 50px 180px;
+
+  p {
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 50px;
+  }
+
+  .userForm {
+    display: block;
+
+    input {
+      width: 100%;
+      display: block;
+      padding: 20px 16px 20px 12px;
+      border: 1px solid $btnColor;
+      border-radius: 9px;
+      font-size: 16px;
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    .inputId,
+    .inputPw {
+      border: 1px solid $btnColor;
+      margin: 5px 0px;
+
+      &.alert {
+        border: 1px solid red;
+      }
+    }
+
+    .alertText {
+      opacity: 0;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 0px 10px;
+
+      &.Active {
+        color: red;
+        opacity: 0.7;
+      }
+    }
+
+    .agree {
+      margin: 0 auto;
+      padding: 40px 0px;
+      font-size: 16px;
+      color: $fontGrey;
+      line-height: 30px;
+      width: 65%;
+    }
+
+    .loginBtn {
+      width: 100%;
+      padding: 20px 16px 20px 12px;
+      background-color: $btnColor;
+      color: white;
+      opacity: 0.3;
+      border: 0px;
+      border-radius: 50px;
+      font-size: 16px;
+
+      &.Active {
+        opacity: 1;
+      }
+    }
+  }
+}
