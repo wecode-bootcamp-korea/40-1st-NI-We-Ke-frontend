@@ -10,9 +10,7 @@ const Content = props => {
       <section className="textBox">
         <p className="title">{title}</p>
         <p className="text">{text}</p>
-        <section className="btnBox">
-          <button>구매하기</button>
-        </section>
+        <button>구매하기</button>
       </section>
     </div>
   );

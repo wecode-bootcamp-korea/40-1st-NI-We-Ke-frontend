@@ -7,7 +7,13 @@ const Main = () => {
   return (
     <div>
       <section className="firstPage">
-        <img src="/images/main_thumnail.jpg" alt="mainThumnail" />
+        {/* <p>GET READY,</p>
+        <p>BE READY</p> */}
+
+        <div className="alignSlogan">
+          <p>YOU ARE MORE THAN</p>
+          <p>YOU THINK YOU ARE</p>
+        </div>
       </section>
       {MAIN_DATA.map(data => {
         return (
