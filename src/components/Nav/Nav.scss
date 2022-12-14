@@ -11,9 +11,8 @@
   height: 60px;
   background-color: white;
 
-  h1 {
-    font-size: 22px;
-    font-style: italic;
+  img {
+    width: 100px;
   }
 
   .logo {
@@ -54,17 +53,17 @@
   margin-right: 30px;
 
   img {
-    width: 24px;
+    width: 35px;
     margin-left: 10px;
   }
 }
 
 .search {
-  width: 100px;
-  padding: 4px 8px;
+  width: 130px;
+  padding: 8px 7px;
   border: none;
   background-color: $inputBg;
-  border-radius: 15px;
+  border-radius: 17px;
 
   .search:focus {
     outline: none;

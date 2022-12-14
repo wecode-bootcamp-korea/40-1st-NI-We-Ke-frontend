@@ -4,6 +4,17 @@
 .searchSection {
   display: flex;
   align-items: center;
+
+  .search {
+    background-image: url('/assets/images/search.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 10px center;
+
+    &:hover {
+      background-color: rgba(117, 117, 117, 0.4);
+    }
+  }
 }
 
 .dropdownSection {

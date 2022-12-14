@@ -69,24 +69,26 @@
 
 .leftBtn {
   position: absolute;
-  top: 40%;
+  top: 30%;
   left: 30%;
   border: none;
   background-color: transparent;
+  opacity: 0.6;
 
-  img {
-    width: 30px;
+  &:hover {
+    opacity: 1;
   }
 }
 
 .rightBtn {
   position: absolute;
-  top: 40%;
+  top: 30%;
   right: 30%;
   border: none;
   background-color: transparent;
+  opacity: 0.6;
 
-  img {
-    width: 30px;
+  &:hover {
+    opacity: 1;
   }
 }
