@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ASIDE_MENU_DATA } from './ASIDE_MENU_DATA';
 import AsideMenuItem from './AsideMenuItem';
 import './AsideMenu.scss';

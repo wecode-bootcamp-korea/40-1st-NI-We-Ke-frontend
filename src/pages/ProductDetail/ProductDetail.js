@@ -75,10 +75,13 @@ const ProductDetail = () => {
                 <h1>{detail.productName}</h1>
                 <h2>{detail.gender}</h2>
                 <p>{detail.price}</p>
-                <p className="bold">사이즈 선택</p>
-                <button className="sizeBtn" key={detail.size[0].id}>
-                  {detail.size[1].value}
-                </button>
+                {detail.size.map(size => {
+                  return (
+                    <button className="sizeBtn" key={size.id}>
+                      {size.value}
+                    </button>
+                  );
+                })}
                 <section className="productExplain">
                   <button className="gotoCart" onClick={onClickDraw}>
                     장바구니
@@ -86,16 +89,26 @@ const ProductDetail = () => {
                   <button className="gotoWishList" onClick={onClickDraw}>
                     위시리스트
                   </button>
-                  <p>{detail.productText}</p>
-                  <div className="review bold">
-                    Review ({detail.review.length})
-                  </div>
-                  <ul key={detail.review[0].id}>
-                    <li className="reviewTitle">
-                      {detail.review[0].user_id}
-                      <span>{detail.review[0].product_option_id}</span>
-                    </li>
-                    <li>{detail.review[0].text}</li>
+                  <ul>
+                    <h3 className="boldTitle">
+                      Review ({detail.review.length})
+                    </h3>
+
+                    {detail.review.map(review => {
+                      return (
+                        <>
+                          <li
+                            className="reviewTitle"
+                            key={review.id}
+                            {...review}
+                          >
+                            {review.user_id}
+                            <span>{review.product_option_id}</span>
+                          </li>
+                          <li className="reviewText">{review.text}</li>
+                        </>
+                      );
+                    })}
                   </ul>
                 </section>
               </section>
