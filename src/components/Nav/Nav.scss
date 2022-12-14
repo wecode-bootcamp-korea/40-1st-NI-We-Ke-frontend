@@ -75,3 +75,18 @@
     border: 1px solid $btnColor;
   }
 }
+
+@media (max-width: 1200px) {
+  .searchSection {
+    display: none;
+  }
+  // .sideOption {
+  //   display: none;
+  // }
+}
+
+@media (max-width: 880px) {
+  .sideOption {
+    display: none;
+  }
+}
