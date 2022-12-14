@@ -7,7 +7,7 @@
   .container {
     display: flex;
     justify-content: center;
-    height: 160vh;
+    height: 140vh;
 
     .imgSection {
       width: 60%;
@@ -76,14 +76,13 @@
         border-radius: 5px;
         margin: 0px 10px 10px 0px;
 
-        &:hover {
+        &.active:hover {
           background-color: $bgcLightGrey;
         }
       }
 
       .review {
-        padding: 10px;
-        transition: all 1s;
+        transition: all 0.3s;
         font-size: 20px;
 
         &.open {
@@ -139,12 +138,14 @@
   }
 
   .detailSection {
-    height: 450vh;
+    height: 240vh;
     margin: 0 auto;
 
     .concept {
       width: 1000px;
-      height: 300px;
+      height: 600px;
+      margin: 225px auto;
+      overflow: hidden;
 
       img {
         width: 100%;
@@ -154,7 +155,14 @@
 
   .dummy {
     height: 30vh;
-    background-color: rgb(189, 128, 128);
+    flex-direction: column;
+    display: flex;
+
+    button {
+      @include btnStyle;
+      width: 250px;
+      margin: 10px auto;
+    }
   }
 
   .drawModal {

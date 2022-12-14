@@ -6,6 +6,7 @@ const ProductDetail = () => {
   const [isVisibleDraw, setIsVisbleDraw] = useState(false);
   const [isVisibleInfo, setIsVisbleInfo] = useState(false);
   const [isVisibleMinor, setIsVisbleMinor] = useState(false);
+  const [isVisibleReview, setIsVisibleReview] = useState(false);
   const [detailData, setDetailData] = useState([]);
 
   const onClickDraw = () => {
@@ -16,6 +17,10 @@ const ProductDetail = () => {
   };
   const onClickPrivilege = () => {
     setIsVisbleMinor(true);
+  };
+
+  const onClickReview = () => {
+    setIsVisibleReview(!isVisibleReview);
   };
 
   useOnClickOutSide(modal, () => {
@@ -77,7 +82,19 @@ const ProductDetail = () => {
                 <p>{detail.price}</p>
                 {detail.size.map(size => {
                   return (
-                    <button className="sizeBtn" key={size.id}>
+                    <button
+                      className={`sizeBtn ${
+                        size.id === 1 || size.id === 5 || size.id === 9
+                          ? 'active'
+                          : 'unactive'
+                      }`}
+                      key={size.id}
+                      disabled={
+                        !(size.id === 1 || size.id === 5 || size.id === 9)
+                          ? true
+                          : false
+                      }
+                    >
                       {size.value}
                     </button>
                   );
@@ -90,23 +107,23 @@ const ProductDetail = () => {
                     위시리스트
                   </button>
                   <ul>
-                    <h3 className="boldTitle">
+                    <h3 className="boldTitle" onClick={onClickReview}>
                       Review ({detail.review.length})
                     </h3>
 
                     {detail.review.map(review => {
                       return (
-                        <>
-                          <li
-                            className="reviewTitle"
-                            key={review.id}
-                            {...review}
-                          >
+                        <div
+                          className={`review
+                            ${isVisibleReview ? 'open' : 'close'}`}
+                          key={review.id}
+                        >
+                          <li className="reviewTitle" {...review}>
                             {review.user_id}
                             <span>{review.product_option_id}</span>
                           </li>
                           <li className="reviewText">{review.text}</li>
-                        </>
+                        </div>
                       );
                     })}
                   </ul>
