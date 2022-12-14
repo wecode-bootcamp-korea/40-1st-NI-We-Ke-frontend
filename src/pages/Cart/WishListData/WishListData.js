@@ -13,11 +13,13 @@ const WishListData = props => {
         <div className="miniWishNoImg">
           <div className="miniWishRowInfo">
             <p className="miniWishName">{name}</p>
-            <p className="miniWishPrice">{price}</p>
+            <p className="miniWishPrice">
+              {price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+            </p>
           </div>
           <p className="miniWishType">{type}</p>
           <p className="miniWishSize"> 사이즈 {size} </p>
-          <button className="miniWishBtn">장바구니에 추가</button>
+          <input className="miniWishBtn" type="button" />
         </div>
       </div>
       <div className="miniWishUnderLine" />

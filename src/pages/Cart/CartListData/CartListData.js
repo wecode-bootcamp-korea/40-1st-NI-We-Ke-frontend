@@ -13,7 +13,9 @@ const CartProduct = props => {
         <div className="noImg">
           <div className="cartRowInfo">
             <p className="cartName">{name}</p>
-            <p className="cartPrice">{price}</p>
+            <p className="cartPrice">
+              {price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+            </p>
           </div>
           <p className="cartType">{type}</p>
           <p className="cartColor">{color}</p>
@@ -21,6 +23,8 @@ const CartProduct = props => {
             <p className="cartSize"> 사이즈 {size} </p>
             <p className="cartAmount">수량 {amount}</p>
           </div>
+          <input className="likeBtn" type="button" />
+          <input className="deleteBtn" type="button" />
         </div>
       </div>
       <div className="underLine" />
