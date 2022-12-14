@@ -9,9 +9,14 @@ const MAIN_DATA = [
     id: 2,
     img: '/images/sports.jpg',
     title: '너만의 무기가 우리의 무기',
-    text: '자신만의 방식으로 스포츠를 즐기고 사랑한다면 그또한 우리가 하나가 되는 길',
+    text: '자신만의 방식으로 스포츠를 즐기고 사랑한다면 그것 또한 우리가 하나가 되는 길',
   },
-  { id: 3, img: '/images/baseball.jpg', title: '야구', text: '재밋다!' },
+  {
+    id: 3,
+    img: '/images/sport3.jpg',
+    title: '무슨 생각을 해, 그냥 하는 거지',
+    text: '재밋다!',
+  },
 ];
 
 export default MAIN_DATA;
