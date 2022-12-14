@@ -1,4 +1,3 @@
-import { getDefaultNormalizer } from '@testing-library/react';
 import React, { useState, useEffect, useRef } from 'react';
 import './ProductDetail.scss';
 
