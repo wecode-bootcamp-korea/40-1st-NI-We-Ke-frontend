@@ -13,8 +13,20 @@ const AsideMenuItem = props => {
 
   const detailClick = event => {
     const { id, value } = event.target.dataset;
-    // searchParams.getAll(value).includes(id); // adsf
-    searchParams.append(value, id);
+    const params = searchParams.getAll(value);
+    const isSelected = params.includes(id);
+
+    if (isSelected) {
+      searchParams.delete(value);
+      params.forEach(param => {
+        if (param === id) return;
+
+        searchParams.append(value, param);
+      });
+    } else {
+      searchParams.append(value, id);
+    }
+
     setSearchParams(searchParams);
   };
 
@@ -23,15 +35,18 @@ const AsideMenuItem = props => {
       <div className="borderBottom" onClick={onClick}>
         <h4>{info.text}</h4>
       </div>
-      <div
-        className={`menu ${isOpen ? 'openMenu' : 'closeMenu'}`}
-        onClick={detailClick}
-      >
+      <div className={`menu ${isOpen ? 'openMenu' : 'closeMenu'}`}>
         {info.detail.map(data => (
-          <div key={data.id}>
-            <p data-id={data.text} data-value={data.value}>
+          <div key={data.text}>
+            <label className="asibeMenuCheckbox">
+              <input
+                type="checkbox"
+                data-id={data.text}
+                data-value={data.value}
+                onClick={detailClick}
+              />
               {data.text}
-            </p>
+            </label>
           </div>
         ))}
       </div>

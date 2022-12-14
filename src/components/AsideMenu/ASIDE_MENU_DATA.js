@@ -4,8 +4,8 @@ export const ASIDE_MENU_DATA = [
     text: '색상',
     detail: [
       { value: 'color', text: 'Red' },
-      { id: 'blue', value: 'color', text: '블루' },
-      { id: 'orange', value: 'color', text: '오렌지' },
+      { value: 'color', text: 'blue' },
+      { value: 'color', text: 'orange' },
     ],
   },
   {
