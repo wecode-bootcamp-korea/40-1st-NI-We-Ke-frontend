@@ -7,9 +7,6 @@ const Main = () => {
   return (
     <div>
       <section className="firstPage">
-        {/* <p>GET READY,</p>
-        <p>BE READY</p> */}
-
         <div className="alignSlogan">
           <p>YOU ARE MORE THAN</p>
           <p>YOU THINK YOU ARE</p>

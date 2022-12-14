@@ -8,11 +8,16 @@
   object-fit: cover;
   overflow: hidden;
   margin-bottom: 200px;
-  background-image: url(../../assets/images/main_thumnail.jpg);
+  background-image: url(../../assets/images/main_1_mono.png);
 
   p {
     font-size: 70px;
     font-weight: 900;
+
+    &:hover {
+      color: $orangeColor;
+      opacity: 0.8;
+    }
   }
 
   .alignSlogan {
