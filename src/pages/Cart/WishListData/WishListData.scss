@@ -1,0 +1,45 @@
+@import '../../../styles/variables.scss';
+
+.miniWishDetailInfo {
+  display: flex;
+
+  .miniWishImgBox {
+    display: flex;
+    width: 200px;
+    height: 200px;
+    background-color: black;
+  }
+
+  .miniWishNoImg {
+    padding-left: 20px;
+    margin-left: 20px;
+
+    .miniWishRowInfo {
+      margin-left: -20px;
+      display: flex;
+      justify-content: space-around;
+      width: 350px;
+
+      font-size: 25px;
+    }
+
+    .miniWishType {
+      font-size: 20px;
+      color: $fontGrey;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+
+    .miniWishSize {
+      margin-bottom: 20px;
+    }
+    .miniWishBtn {
+      width: 30px;
+      height: 30px;
+      border: none;
+      background-image: url('../../../assets/images/shoppingCart.png');
+      background-size: cover;
+      background-color: transparent;
+    }
+  }
+}
