@@ -4,43 +4,135 @@
 
 .container {
   display: flex;
-  height: 200vh;
+
+  height: 150vh;
+
   background-color: rgb(174, 174, 174);
 
   .imgSection {
     width: 70%;
-    height: 200vh;
-    background-color: cadetblue;
+
+    height: 150vh;
+    background-color: #eee;
+
+    .verSection {
+      display: flex;
+      justify-content: space-evenly;
+      .verImg {
+        width: 45%;
+        height: 70vh;
+      }
+    }
+    .rowImg {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 70vh;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
   }
   .stickySection {
     width: 30%;
-    background-color: aquamarine;
+    background-color: white;
 
     .productExplain {
       position: sticky;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       top: 0;
-      margin-top: 50%;
+      margin-top: 5%;
       width: 100%;
-      height: 50vh;
-      background-color: deepskyblue;
+      height: 60vh;
+      background-color: #eee;
+      border: 1px solid #ddd;
+
+      .explainText {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 5px;
+        width: 90%;
+        height: 80%;
+
+        .productTitle {
+          font-size: 32px;
+        }
+        .productText {
+          font-size: 18px;
+        }
+        .productPrice {
+          font-size: 24px;
+        }
+      }
+      .drawBtn {
+        width: 200px;
+        height: 40px;
+        border: none;
+        border-radius: 20px;
+        color: #eee;
+        background-color: #333;
+        &:hover {
+          background-color: #111;
+        }
+      }
+    }
+  }
+}
+.detailSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 300vh;
+  background-color: #eee;
+
+  img {
+    // width: 100%;
+    height: 100vh;
+  }
+}
+
+.drawFooter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background-color: white;
+
+  .footerBtn {
+    margin: 5px;
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 30px;
+    color: #eee;
+    background-color: #444;
+    &:hover {
+      background-color: #222;
     }
   }
 }
 
-.dummy {
-  height: 200vh;
-  background-color: rgb(189, 128, 128);
-}
-
 .drawModal {
   position: fixed;
-  padding: 15px;
+
+  padding: 30px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 550px;
+  width: 500px;
   height: 600px;
-  background-color: #ccc;
+  background-color: #fff;
+
   border-radius: 15px;
 
   .modalHeader {
@@ -55,10 +147,31 @@
   .modalBody {
     height: 90%;
 
+    .nameSection {
+      margin-left: 10px;
+      input {
+        width: 70px;
+        height: 20px;
+        margin-left: 10px;
+      }
+    }
+
+    .phoneSection {
+      display: flex;
+      margin-left: 10px;
+    }
+    .phoneInput {
+      input {
+        margin-left: 10px;
+        width: 60px;
+        height: 20px;
+      }
+    }
     form {
       display: flex;
       flex-direction: column;
-      justify-content: space-evenly;
+      justify-content: space-around;
+
       height: 100%;
 
       .sizeSelect {
@@ -70,37 +183,22 @@
           margin: 5px;
         }
       }
-      .submitBtn {
-        width: 200px;
-        height: 40px;
-        border: none;
-        border-radius: 20px;
-        color: #eee;
-        background-color: #333;
-        &:hover {
-          background-color: #111;
+      .buttonSection {
+        display: flex;
+        justify-content: center;
+
+        .submitBtn {
+          width: 200px;
+          height: 40px;
+          border: none;
+          border-radius: 20px;
+          color: #eee;
+          background-color: #333;
+          &:hover {
+            background-color: #111;
+          }
         }
       }
     }
   }
-}
-
-.infoModal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 600px;
-  height: 600px;
-  background-color: gray;
-}
-
-.minerModal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 600px;
-  height: 600px;
-  background-color: gray;
 }
