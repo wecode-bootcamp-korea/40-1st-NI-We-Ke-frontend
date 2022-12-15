@@ -3,6 +3,15 @@
   align-items: center;
 }
 
+.searchBtn {
+  width: 25px;
+  height: 25px;
+  border: none;
+  background-image: url('../../../../assets/images/likeClick.png');
+  background-size: cover;
+  background-color: transparent;
+}
+
 .dropdownSection {
   position: absolute;
   top: 0;
