@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useParams } from 'react-router-dom';
 import './ProductDetail.scss';
 
 const ProductDetail = () => {
@@ -9,6 +10,8 @@ const ProductDetail = () => {
   const [isVisibleReview, setIsVisibleReview] = useState(false);
   const [detailData, setDetailData] = useState([]);
   const [selectSize, setSelectSize] = useState(0);
+
+  const { id } = useParams();
 
   const onClickDraw = () => {
     setIsVisbleDraw(true);
@@ -39,12 +42,12 @@ const ProductDetail = () => {
   });
 
   useEffect(() => {
-    fetch('./data/productDetail.json')
+    fetch(`./data/productDetail.json/${id}`)
       .then(res => res.json())
       .then(data => {
         setDetailData(data);
       });
-  }, []);
+  }, [id]);
 
   return (
     <div className="productDetail">
