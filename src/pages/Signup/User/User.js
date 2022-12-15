@@ -18,7 +18,7 @@ const User = ({ text }) => {
   const onClickValidUser = e => {
     e.preventDefault();
 
-    fetch('http://10.58.52.153:3000/auth/signin', {
+    fetch('http://10.58.52.138:3000/auth/signin', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

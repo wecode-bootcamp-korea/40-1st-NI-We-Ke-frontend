@@ -32,11 +32,14 @@ const Dropdown = props => {
           {carousel.map(carousel => {
             return (
               <div className="carousel" key={carousel.sub_id}>
-                <img
-                  className="carouselImg"
-                  src={carousel.img}
-                  alt="캐러셀 이미지"
-                />
+                <div className="imgBox">
+                  <img
+                    className="carouselImg"
+                    src={carousel.img}
+                    alt="캐러셀 이미지"
+                  />
+                </div>
+
                 <section className="carouselContent">
                   <p className="carouselText">{carousel.text}</p>
                   <p className="carouselTitle">{carousel.sub_name}</p>
@@ -48,10 +51,10 @@ const Dropdown = props => {
         </section>
       </div>
       <button className="leftBtn" onClick={moveLeft}>
-        <img src="./images/Nav/left-arrow.png" alt="왼쪽버튼" />
+        <img src="./images/Nav/backBtn.png" alt="왼쪽버튼" />
       </button>
       <button className="rightBtn" onClick={moveRight}>
-        <img src="./images/Nav/right-arrow.png" alt="오른쪽버튼" />
+        <img src="./images/Nav/fowardBtn.png" alt="오른쪽버튼" />
       </button>
     </div>
   );
