@@ -62,10 +62,11 @@ const Search = () => {
               data.message?.map(searchdata => {
                 // return inputValue.length > 0 &&
                 //   searchdata.value.includes(inputValue) ? (
+                console.log(searchdata.image_url);
                 return (
                   <Searchresult
                     key={searchdata.id}
-                    img={searchdata.image_url}
+                    image={searchdata.imageUrl}
                     name={searchdata.name}
                     price={searchdata.price}
                   />
