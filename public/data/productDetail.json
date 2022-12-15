@@ -10,14 +10,8 @@
     "price": "100,000원",
     "size": [
       { "id": 1, "value": 200 },
-      { "id": 2, "value": 210 },
-      { "id": 3, "value": 220 },
-      { "id": 4, "value": 230 },
-      { "id": 5, "value": 240 },
-      { "id": 6, "value": 250 },
-      { "id": 7, "value": 260 },
-      { "id": 8, "value": 270 },
-      { "id": 9, "value": 280 }
+      { "id": 2, "value": 240 },
+      { "id": 3, "value": 280 }
     ],
     "review": [
       {

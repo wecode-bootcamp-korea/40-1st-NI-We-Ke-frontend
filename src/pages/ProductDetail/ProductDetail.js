@@ -8,6 +8,7 @@ const ProductDetail = () => {
   const [isVisibleMinor, setIsVisbleMinor] = useState(false);
   const [isVisibleReview, setIsVisibleReview] = useState(false);
   const [detailData, setDetailData] = useState([]);
+  const [selectSize, setSelectSize] = useState(0);
 
   const onClickDraw = () => {
     setIsVisbleDraw(true);
@@ -21,6 +22,10 @@ const ProductDetail = () => {
 
   const onClickReview = () => {
     setIsVisibleReview(!isVisibleReview);
+  };
+
+  const onClickBtn = size => {
+    setSelectSize(size);
   };
 
   useOnClickOutSide(modal, () => {
@@ -46,21 +51,21 @@ const ProductDetail = () => {
       {detailData.map(detail => {
         return (
           <div key={detail.id} {...detail}>
-            <article className="container">
+            <article className="productContainer">
               <section className="imgSection">
                 <ul className="imgBox">
                   <div>
                     <ul className="wrapperImgBox">
-                      <li>
+                      <li className="innerWrapper">
                         <img
-                          className="product"
+                          className="innerProductImg"
                           src={detail.thumnail_left}
                           alt="product"
                         />
                       </li>
                       <li>
                         <img
-                          className="product"
+                          className="innerProductImg"
                           src={detail.thumnail_right}
                           alt="product"
                         />
@@ -84,16 +89,10 @@ const ProductDetail = () => {
                   return (
                     <button
                       className={`sizeBtn ${
-                        size.id === 1 || size.id === 5 || size.id === 9
-                          ? 'active'
-                          : 'unactive'
+                        selectSize === Number(size.value) ? 'selected' : ''
                       }`}
                       key={size.id}
-                      disabled={
-                        !(size.id === 1 || size.id === 5 || size.id === 9)
-                          ? true
-                          : false
-                      }
+                      onClick={() => onClickBtn(size.value)}
                     >
                       {size.value}
                     </button>
@@ -130,7 +129,7 @@ const ProductDetail = () => {
                 </section>
               </section>
             </article>
-            <section className="detailSection">
+            <section className="productDetailSection">
               <article className="concept">
                 <img src={detail.detail_first} alt="컨셉이미지" />
               </article>
