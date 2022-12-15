@@ -1,17 +1,25 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../Product/Product.scss';
 
 const Product = props => {
-  const { name, url, color, price } = props;
-
+  const { id, ProductsName, name, imageUrl, price } = props;
+  console.log(id);
   return (
     <section className="eactProduct">
-      <div className="imgBox">
-        <img className="img" src={url} alt="상품" />
-      </div>
-      <p className="name">{name}</p>
-      <p className="option">{color}</p>
-      <p className="price">{price}</p>
+      <Link to={`/products/detail/${id}`}>
+        <div className="imgBox">
+          <img className="img" src={imageUrl} alt="상품" />
+        </div>
+        <p className="name">{ProductsName}</p>
+        <p className="name">{name}</p>
+        <p className="price">
+          {Math.ceil(price)
+            .toString()
+            .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}{' '}
+          KRW
+        </p>
+      </Link>
     </section>
   );
 };

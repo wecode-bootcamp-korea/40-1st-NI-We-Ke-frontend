@@ -4,6 +4,7 @@ import Snkrs from './Category/Snkrs';
 import Sideoption from './Sideoption/Sideoption';
 import CATEGORY_DATA from './categoryData';
 import './Nav.scss';
+import { Link } from 'react-router-dom';
 
 const Nav = () => {
   // TODO:  상수데이터 => 서버데이터로 변경 예정
@@ -19,6 +20,7 @@ const Nav = () => {
                 key={category.id}
                 name={category.name}
                 carousel={category.carousel}
+                url={category.url}
               />
             );
           })}

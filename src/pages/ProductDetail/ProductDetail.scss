@@ -103,12 +103,17 @@
         }
       }
 
+      .reviewSection {
+        overflow: scroll;
+      }
+
       .review {
         transition: all 0.3s;
         font-size: 20px;
 
         &.open {
           max-height: 100px;
+          overflow: scroll;
         }
 
         &.close {

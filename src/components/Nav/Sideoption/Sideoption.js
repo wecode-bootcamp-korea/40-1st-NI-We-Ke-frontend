@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Search from './Search/Search';
 import './Sideoption.scss';
 
@@ -23,7 +24,13 @@ const sideOption = () => {
           src="/images/Nav/shoppingIcon.png"
           alt="장바구니"
         />
-        <img className="sideIcon" src="/images/Nav/userIcon.png" alt="내정보" />
+        <Link to="/auth/signup">
+          <img
+            className="sideIcon"
+            src="/images/Nav/userIcon.png"
+            alt="내정보"
+          />
+        </Link>
       </div>
     </section>
   );

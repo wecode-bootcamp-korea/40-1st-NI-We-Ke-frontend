@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Dropdown from '../Dropdown/Dropdown';
 
 const Category = props => {
-  const { name, carousel } = props;
+  const { name, carousel, url } = props;
   const [isVisible, setisVisible] = useState(false);
 
   const onMouseEnter = () => {
@@ -19,9 +20,9 @@ const Category = props => {
     >
       <li>{name}</li>
       {isVisible ? (
-        <Dropdown className="dropDown" carousel={carousel} />
+        <Dropdown className="dropDown" carousel={carousel} url={url} />
       ) : (
-        <Dropdown className="dropDownHidden" carousel={carousel} />
+        <Dropdown className="dropDownHidden" carousel={carousel} url={url} />
       )}
     </div>
   );

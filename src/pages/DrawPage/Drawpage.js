@@ -24,13 +24,15 @@ const Drawpage = () => {
     setIsVisbleDraw(false);
   });
 
-  useEffect(() => {
-    fetch('/data/drawProductData.json')
-      .then(res => res.json())
-      .then(data => {
-        setData(data);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch(`http://10.58.52.128:3000/draws/products`)
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setData(data);
+  //     });
+  // }, []);
+
+  // console.log(data.message);
 
   const obj = {
     1: {

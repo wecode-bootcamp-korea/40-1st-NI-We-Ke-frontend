@@ -18,7 +18,7 @@ const User = ({ text }) => {
   const onClickValidUser = e => {
     e.preventDefault();
 
-    fetch('http://10.58.52.138:3000/auth/signin', {
+    fetch('http://10.58.52.128:3000/auth/signin', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -35,11 +35,12 @@ const User = ({ text }) => {
       .catch(error => console.error(error))
       .then(data => {
         if (!!data.accessToken) {
-          localStorage.setItem('TOKEN', data.token);
+          localStorage.setItem('accessToken', data.accessToken);
           alert('로그인에 성공했습니다');
-          navigate('/main');
+          navigate('/');
         } else {
-          alert('아이디와 비밀번호를 확인 해 주세요');
+          alert('가입에 성공했습니다! 로그인하시겠습니까?');
+          navigate('/auth/signin');
         }
       });
   };

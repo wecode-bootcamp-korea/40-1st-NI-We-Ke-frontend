@@ -10,7 +10,7 @@ const Cart = () => {
   const [cartList, setCartList] = useState([]);
 
   useEffect(() => {
-    fetch('./data/Cartdata.json')
+    fetch('http://10.58.52.128:3000/carts')
       .then(res => res.json())
       .then(data => {
         setCartList(data);
