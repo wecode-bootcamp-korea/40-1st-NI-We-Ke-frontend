@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import Snkrsdrop from '../Dropdown/Snkrsdrop';
 
 const Snkrs = () => {
-  const [isVisible, setisVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   const onMouseEnter = () => {
-    setisVisible(true);
+    setIsVisible(true);
   };
   const onMouseExit = () => {
-    setisVisible(false);
+    setIsVisible(false);
   };
   return (
     <div onMouseEnter={onMouseEnter} onMouseLeave={onMouseExit}>
