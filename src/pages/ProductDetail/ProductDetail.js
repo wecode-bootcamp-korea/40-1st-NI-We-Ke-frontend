@@ -68,7 +68,7 @@ const ProductDetail = () => {
                     </ul>
                     <li className="rowImg">
                       <img
-                        className="product"
+                        className="bottomImg"
                         src={detail.thumnail_bottom}
                         alt="product"
                       />

@@ -7,11 +7,13 @@
   .container {
     display: flex;
     justify-content: center;
-    height: 140vh;
+    height: 100vh;
 
     .imgSection {
+      display: flex;
+      flex-wrap: wrap;
       width: 60%;
-      height: 70vh;
+      height: 100vh;
 
       .imgBox {
         width: 90%;
@@ -25,16 +27,22 @@
         li {
           width: 100%;
           padding: 10px;
-          height: 600px;
+          height: 50%;
           overflow: hidden;
 
           img {
-            width: 100%;
             object-fit: cover;
+          }
+
+          .bottomImg{
+            width: 95%;
+            height: 400px;
           }
         }
 
         .rowImg {
+          display: flex;
+          justify-content: center;
           margin-top: 10px;
         }
       }
@@ -138,13 +146,12 @@
   }
 
   .detailSection {
-    height: 240vh;
     margin: 0 auto;
 
     .concept {
       width: 1000px;
       height: 600px;
-      margin: 225px auto;
+      margin: 30px auto;
       overflow: hidden;
 
       img {
