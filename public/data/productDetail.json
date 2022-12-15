@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "thumnail_left": "/images/product1.jpg",
+    "thumnail_right": "/images/product1.jpg",
+    "thumnail_bottom": "/images/product2.jpg",
+    "detail_first": "/images/running.jpg",
+    "productName": "Air Marc 50",
+    "gender": "Men",
+    "price": "100,000원",
+    "size": [
+      { "id": 1, "value": 200 },
+      { "id": 2, "value": 240 },
+      { "id": 3, "value": 280 }
+    ],
+    "review": [
+      {
+        "id": 1,
+        "user_id": "user1",
+        "product_option_id": "옵션 선택한 거 출력하기",
+        "text": "관련 리뷰 내용 추가하기"
+      },
+      {
+        "id": 2,
+        "user_id": "user2",
+        "product_option_id": "옵션 선택한 거 출력하기",
+        "text": "관련 리뷰 내용 추가하기"
+      },
+      {
+        "id": 3,
+        "user_id": "user3",
+        "product_option_id": "옵션 선택한 거 출력하기",
+        "text": "관련 리뷰 내용 추가하기"
+      }
+    ]
+  }
+]

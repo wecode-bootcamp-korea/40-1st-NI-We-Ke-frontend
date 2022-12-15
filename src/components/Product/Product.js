@@ -5,7 +5,7 @@ const Product = props => {
   const { name, url, color, price } = props;
 
   return (
-    <section className="product">
+    <section className="eactProduct">
       <div className="imgBox">
         <img className="img" src={url} alt="상품" />
       </div>

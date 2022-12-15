@@ -1,7 +1,7 @@
 @import '../../styles/variables.scss';
 
 .sideMenu {
-  width: 240px;
+  width: 250px;
   overflow-y: auto;
 
   .borderBottom {
@@ -9,12 +9,12 @@
     padding: 10px 5px;
 
     h4 {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 700;
-      color: $fontGrey;
+      color: $btnColor;
 
       &:hover {
-        color: $btnColor;
+        color: $orangeColor;
       }
     }
   }
@@ -29,7 +29,7 @@
 
   .menu {
     padding: 5px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 32px;
     transition: all 1s;
