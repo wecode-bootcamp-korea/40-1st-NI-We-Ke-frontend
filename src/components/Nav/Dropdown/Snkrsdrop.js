@@ -18,7 +18,7 @@ const Snkrsdrop = () => {
   return (
     <div className="snkrsDrop">
       <section className="snkrsList">
-        {data.message.map(item => {
+        {data.message?.map(item => {
           return <Snkrsitem key={item.id} {...item} />;
         })}
       </section>

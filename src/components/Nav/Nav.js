@@ -11,7 +11,9 @@ const Nav = () => {
 
   return (
     <div className="navBar">
-      <img src="/images/nike_logo.png" alt="logo" />
+      <Link to={'/'}>
+        <img src="/images/nike_logo.png" alt="logo" />
+      </Link>
       <section className="category">
         <ul className="navList">
           {CATEGORY_DATA.map(category => {

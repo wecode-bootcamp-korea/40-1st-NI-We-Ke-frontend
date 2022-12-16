@@ -8,11 +8,16 @@ const ProductDetail = () => {
   const [isVisibleInfo, setIsVisbleInfo] = useState(false);
   const [isVisibleMinor, setIsVisbleMinor] = useState(false);
   const [isVisibleReview, setIsVisibleReview] = useState(false);
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({});
 
   const idParam = useParams();
   const numsIdParams = Number(idParam.id);
-  console.log(numsIdParams);
+
+  useEffect(() => {
+    fetch(`http://10.58.52.128:3000/products/detail/${numsIdParams}`)
+      .then(res => res.json())
+      .then(data => setData(data[0]));
+  }, [numsIdParams]);
 
   const onClickDraw = () => {
     setIsVisbleDraw(true);
@@ -46,23 +51,21 @@ const ProductDetail = () => {
   //     });
   // }, []);
 
-  useEffect(() => {
-    fetch(`http://10.58.52.128:3000/products/detail/${numsIdParams}`)
-      .then(res => res.json())
-      .then(data => {
-        setData(data);
-      });
-  }, []);
-  console.log(data);
-
   return (
     <div className="productDetail">
       <div>
         <article className="productContainer">
           <section className="imgSection">
-            <img src={data.images[0].imageUrl.value} alt="썸네일 이미지 1" />
-            <img src={data.images.imageUrl} alt="썸네일 이미지 2" />
-            <img src={data.images.imageUrl} alt="썸네일 이미지 3" />
+            <div>
+              {data.images?.map(img => (
+                <img
+                  key={img.imageId}
+                  src={img.imageUrl}
+                  alt="썸네일 이미지 2"
+                  className="productDetailImg"
+                />
+              ))}
+            </div>
           </section>
           <section className="stickySection">
             {/* <h1>{data[0].productName}</h1> */}
@@ -101,17 +104,13 @@ const ProductDetail = () => {
             </section>
           </section>
         </article>
-        <section className="productDetailSection">
-          <article className="concept">
-            <img src={data.images.imageUrl} alt="컨셉이미지" />
-          </article>
-          <article className="concept">
-            <img src={data.images.imageUrl} alt="컨셉이미지" />
-          </article>
-          <article className="concept">
-            <img src={data.images.imageUrl} alt="컨셉이미지" />
-          </article>
-        </section>
+        {/* <section className="productDetailSection">
+          {data.images?.map(img => (
+            <article key={img.imageId} className="concept">
+              <img src={img.imageUrl} alt="컨셉이미지" />
+            </article>
+          ))}
+        </section> */}
       </div>
 
       <div className="dummy">

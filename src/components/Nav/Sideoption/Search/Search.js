@@ -6,11 +6,10 @@ import Searchresult from './Searchresult';
 import './Search.scss';
 
 const Search = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({});
   const [searchOpen, setSearchOpen] = useState(100);
   const [inputValue, setInputValue] = useState('');
-  const [searchParams, setSearchParams] = useSearchParams();
-  const [name, setName] = useState('');
+
   const ref = useRef();
 
   const onClickInput = () => {
@@ -20,17 +19,16 @@ const Search = () => {
 
   const onChangeInput = e => {
     setInputValue(e.target.value);
-  };
-
-  useOutSideClick(ref, () => setSearchOpen(100));
-
-  useEffect(() => {
-    fetch(`http://10.58.52.128:3000/products/product?productName=${inputValue}`)
+    fetch(
+      `http://10.58.52.128:3000/products/product?productName=${e.target.value}`
+    )
       .then(res => res.json())
       .then(data => {
         setData(data);
       });
-  }, [inputValue]);
+  };
+
+  useOutSideClick(ref, () => setSearchOpen(100));
 
   return (
     <div className="searchSection">
@@ -56,13 +54,10 @@ const Search = () => {
           <article className="content">
             {inputValue.length === 0 ? (
               <p>검색어를 입력하세요</p>
-            ) : data.message === 'Key Error' || data.message.length === 0 ? (
+            ) : data.message === 'Key Error' || data.message?.length === 0 ? (
               <p>일치하는 결과가 없습니다.</p>
             ) : (
               data.message?.map(searchdata => {
-                // return inputValue.length > 0 &&
-                //   searchdata.value.includes(inputValue) ? (
-                console.log(searchdata.image_url);
                 return (
                   <Searchresult
                     key={searchdata.id}

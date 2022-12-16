@@ -18,7 +18,9 @@ const Category = props => {
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseExit}
     >
-      <li>{name}</li>
+      <Link to={url}>
+        <li>{name}</li>
+      </Link>
       {isVisible ? (
         <Dropdown className="dropDown" carousel={carousel} url={url} />
       ) : (

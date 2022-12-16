@@ -1,9 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Search from './Search/Search';
 import './Sideoption.scss';
 
 const sideOption = () => {
+  // const navigate = useNavigate();
+
+  const toGoCart = () => {};
+
+  const toGoLike = () => {};
+
   return (
     <section className="sideOption">
       <Search />
