@@ -8,10 +8,16 @@ const ProductDetail = () => {
   const [isVisibleInfo, setIsVisbleInfo] = useState(false);
   const [isVisibleMinor, setIsVisbleMinor] = useState(false);
   const [isVisibleReview, setIsVisibleReview] = useState(false);
-  const [detailData, setDetailData] = useState([]);
-  const [selectSize, setSelectSize] = useState(0);
+  const [data, setData] = useState({});
 
-  const { id } = useParams();
+  const idParam = useParams();
+  const numsIdParams = Number(idParam.id);
+
+  useEffect(() => {
+    fetch(`http://10.58.52.128:3000/products/detail/${numsIdParams}`)
+      .then(res => res.json())
+      .then(data => setData(data[0]));
+  }, [numsIdParams]);
 
   const onClickDraw = () => {
     setIsVisbleDraw(true);
@@ -27,10 +33,6 @@ const ProductDetail = () => {
     setIsVisibleReview(!isVisibleReview);
   };
 
-  const onClickBtn = size => {
-    setSelectSize(size);
-  };
-
   useOnClickOutSide(modal, () => {
     setIsVisbleDraw(false);
   });
@@ -41,111 +43,76 @@ const ProductDetail = () => {
     setIsVisbleMinor(false);
   });
 
-  useEffect(() => {
-    fetch(`./data/productDetail.json/${id}`)
-      .then(res => res.json())
-      .then(data => {
-        setDetailData(data);
-      });
-  }, [id]);
+  // useEffect(() => {
+  //   fetch(`http://10.58.52.128:3000/products/detail/${idParam.id}`)
+  //     .then(res => res.json())
+  //     .then(datas => {
+  //       setData(datas);
+  //     });
+  // }, []);
 
   return (
     <div className="productDetail">
-      {detailData.map(detail => {
-        return (
-          <div key={detail.id} {...detail}>
-            <article className="productContainer">
-              <section className="imgSection">
-                <ul className="imgBox">
-                  <div>
-                    <ul className="wrapperImgBox">
-                      <li className="innerWrapper">
-                        <img
-                          className="innerProductImg"
-                          src={detail.thumnail_left}
-                          alt="product"
-                        />
-                      </li>
-                      <li>
-                        <img
-                          className="innerProductImg"
-                          src={detail.thumnail_right}
-                          alt="product"
-                        />
-                      </li>
-                    </ul>
-                    <li className="rowImg">
-                      <img
-                        className="bottomImg"
-                        src={detail.thumnail_bottom}
-                        alt="product"
-                      />
-                    </li>
-                  </div>
-                </ul>
-              </section>
-              <section className="stickySection">
-                <h1>{detail.productName}</h1>
-                <h2>{detail.gender}</h2>
-                <p>{detail.price}</p>
-                {detail.size.map(size => {
-                  return (
-                    <button
-                      className={`sizeBtn ${
-                        selectSize === Number(size.value) ? 'selected' : ''
-                      }`}
-                      key={size.id}
-                      onClick={() => onClickBtn(size.value)}
-                    >
-                      {size.value}
-                    </button>
-                  );
-                })}
-                <section className="productExplain">
-                  <button className="gotoCart" onClick={onClickDraw}>
-                    장바구니
-                  </button>
-                  <button className="gotoWishList" onClick={onClickDraw}>
-                    위시리스트
-                  </button>
-                  <ul>
-                    <h3 className="boldTitle" onClick={onClickReview}>
-                      Review ({detail.review.length})
-                    </h3>
+      <div>
+        <article className="productContainer">
+          <section className="imgSection">
+            <div>
+              {data.images?.map(img => (
+                <img
+                  key={img.imageId}
+                  src={img.imageUrl}
+                  alt="썸네일 이미지 2"
+                  className="productDetailImg"
+                />
+              ))}
+            </div>
+          </section>
+          <section className="stickySection">
+            {/* <h1>{data[0].productName}</h1> */}
+            {/* <h2>{data[0].gender}</h2> */}
+            <p>{data.price}</p>
+            <button className="sizeBtn"> {data.size}</button>
 
-                    {detail.review.map(review => {
-                      return (
-                        <div
-                          className={`review
+            <section className="productExplain">
+              <button className="gotoCart" onClick={onClickDraw}>
+                장바구니
+              </button>
+              <button className="gotoWishList" onClick={onClickDraw}>
+                위시리스트
+              </button>
+              <ul>
+                <h3 className="boldTitle" onClick={onClickReview}>
+                  {/* Review ({data[0].reviews.length}) */}
+                </h3>
+                <div className="reviewSection">
+                  {/* {data[0].reviews.map(review => {
+                    return (
+                      <div
+                        className={`review
                             ${isVisibleReview ? 'open' : 'close'}`}
-                          key={review.id}
-                        >
-                          <li className="reviewTitle" {...review}>
-                            {review.user_id}
-                            <span>{review.product_option_id}</span>
-                          </li>
-                          <li className="reviewText">{review.text}</li>
-                        </div>
-                      );
-                    })}
-                  </ul>
-                </section>
-              </section>
-            </article>
-            <section className="productDetailSection">
-              <article className="concept">
-                <img src={detail.detail_first} alt="컨셉이미지" />
-              </article>
-              <article className="concept">
-                <img src={detail.detail_first} alt="컨셉이미지" />
-              </article>
-              <article className="concept">
-                <img src={detail.detail_first} alt="컨셉이미지" />
-              </article>
+                        key={review.id}
+                      >
+                        <li className="reviewTitle" {...review}>
+                          <span>{review.email}</span>
+                        </li>
+                        <li className="reviewText">{review.review}</li>
+                      </div>
+                    );
+                  })} */}
+                </div>
+              </ul>
             </section>
-          </div>
-        );
-      })}
+          </section>
+        </article>
+        {/* <section className="productDetailSection">
+          {data.images?.map(img => (
+            <article key={img.imageId} className="concept">
+              <img src={img.imageUrl} alt="컨셉이미지" />
+            </article>
+          ))}
+        </section> */}
+      </div>
+
       <div className="dummy">
         <button onClick={onClickInfo}>상품정보제공고시</button>
         <button onClick={onClickPrivilege}>미성년자 권리보호안내</button>

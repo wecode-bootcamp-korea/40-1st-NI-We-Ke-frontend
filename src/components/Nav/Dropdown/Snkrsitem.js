@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Snkrsitem.scss';
 
 const Snkrsitem = props => {
-  const { img, name, text } = props;
+  const { image_url, name } = props;
   const [isHoverContent, setIsHoverContent] = useState('');
 
   const openHeight = () => {
@@ -20,10 +20,9 @@ const Snkrsitem = props => {
       onMouseLeave={closeHeight}
     >
       <div className="eventSection">
-        <img src={img} alt="드로우 상품" />
+        <img src={image_url} alt="드로우 상품" />
         <section className={`textSection ${isHoverContent ? 'show' : ''}`}>
           <p className="bold">{name}</p>
-          <p>{text}</p>
         </section>
       </div>
     </div>

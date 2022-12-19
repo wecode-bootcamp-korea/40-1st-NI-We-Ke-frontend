@@ -6,25 +6,20 @@ const Snkrsdrop = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch('./data/DrawData.json')
+    fetch(`http://10.58.52.128:3000/draws/products`)
       .then(res => res.json())
       .then(data => {
         setData(data);
       });
   }, []);
+  console.log(data);
+  console.log(data.message);
 
   return (
     <div className="snkrsDrop">
       <section className="snkrsList">
-        {data.map(item => {
-          return (
-            <Snkrsitem
-              key={item.id}
-              name={item.name}
-              img={item.img}
-              text={item.text}
-            />
-          );
+        {data.message?.map(item => {
+          return <Snkrsitem key={item.id} {...item} />;
         })}
       </section>
     </div>

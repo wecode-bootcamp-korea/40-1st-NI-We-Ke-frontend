@@ -2,6 +2,7 @@ const CATEGORY_DATA = [
   {
     id: 1,
     name: 'MEN',
+    url: '/products/category/1',
     carousel: [
       {
         sub_id: 1,
@@ -26,6 +27,7 @@ const CATEGORY_DATA = [
   {
     id: 2,
     name: 'WOMEN',
+    url: '/products/category/2',
     carousel: [
       {
         sub_id: 1,
@@ -50,6 +52,7 @@ const CATEGORY_DATA = [
   {
     id: 3,
     name: 'KIDS',
+    url: '/products/category/3',
     carousel: [
       {
         sub_id: 1,

@@ -17,6 +17,20 @@
   }
 }
 
+.searchBtn {
+  width: 35px;
+  height: 35px;
+  border: none;
+  background-image: url('../../../../assets/images/search.png');
+  background-size: cover;
+  background-color: transparent;
+
+  &:hover {
+    background-color: rgba(117, 117, 117, 0.2);
+    border-radius: 20px;
+  }
+}
+
 .dropdownSection {
   position: fixed;
   top: 0;

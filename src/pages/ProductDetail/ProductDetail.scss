@@ -15,6 +15,11 @@
       width: 60%;
       height: 100vh;
 
+      .productDetailImg {
+        width: 300px;
+        height: 300px;
+      }
+
       .imgBox {
         width: 90%;
 
@@ -103,12 +108,17 @@
         }
       }
 
+      .reviewSection {
+        overflow: scroll;
+      }
+
       .review {
         transition: all 0.3s;
         font-size: 20px;
 
         &.open {
           max-height: 100px;
+          overflow: scroll;
         }
 
         &.close {
