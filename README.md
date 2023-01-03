@@ -37,7 +37,7 @@
 
 </br>
 
-# LINK TO 👉🏻
+# LINK TO 👉🏻 Trello, Notion
 
 <div>
 <a href='https://trello.com/b/k1QJ1bBl/40%EA%B8%B0-niweke-1st-project'><img src="https://img.shields.io/badge/Trello-0052CC?style=flat&logo=Trello&logoColor=white" /></a>
