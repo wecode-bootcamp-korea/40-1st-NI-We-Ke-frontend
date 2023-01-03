@@ -137,3 +137,9 @@
 | 상세페이지 모달 | <img width=30% src=https://user-images.githubusercontent.com/117628412/210353338-1f71298a-2668-487e-8e5f-d0869f124fcc.gif> |
 | 메인페이지 fadein | <img width=30% src=https://user-images.githubusercontent.com/117628412/210353855-ee47954d-c5af-46d3-85d1-49ac586d5179.gif> |
 | 검색 | <img width=30% src="https://user-images.githubusercontent.com/117628412/210353734-7466faa2-99cd-48ec-86f3-f8dfe9ad36ad.gif"> |
+
+
+## References 
+* 이 프로젝트는 [나이키 공식 홈페이지](https://www.nike.com/kr/)를 참조하여 학습목적으로 만들었습니다. 
+* 실무 수준의 프로젝트이지만 학습용으로 만들었기때문에 이 코드를 활용하여 이득을 취하거나 무단 배포할 경우 법적으로 문제가 될 수 있습니다. 
+* 이 프로젝트에서 사용하고 있는 사진 대부분은 위코드에서 구매한 것이므로 해당 프로젝트 외부인이 사용할 수 없습니다. 
